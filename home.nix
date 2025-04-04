@@ -11,6 +11,7 @@
     waybar.enable = true;
     ags.enable = true;
     vscode.enable = true;
+    firefox.enable = true;
   };
 
   wayland.windowManager.hyprland = {

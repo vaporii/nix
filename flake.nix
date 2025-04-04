@@ -10,6 +10,11 @@
     };
 
     ags.url = "github:aylur/ags";
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:

@@ -69,8 +69,6 @@
     users.vaporii = import ./home.nix;
   };
 
-  programs.firefox.enable = true;
-
   environment.systemPackages = with pkgs; [
     ((vim_configurable.override { }).customize{
       name = "vim";
