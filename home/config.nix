@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-{
+{ 
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.bibata-cursors;
@@ -12,8 +12,8 @@
     enable = true;
 
     iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.gruvbox-plus-icons;
+      name = "Gruvbox Dark";
     };
   };
 }
