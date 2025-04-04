@@ -17,8 +17,8 @@
     };
 
     theme = {
-      package = pkgs.gruvbox-gtk-theme;
-      name = "Gruvbox-Dark-BL-LB";
+      package = pkgs.gruvbox-material-gtk-theme;
+      name = "Gruvbox-Material-Dark";
     };
   };
 }
