@@ -11,21 +11,22 @@
 
     ags.url = "github:aylur/ags";
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    textfox.url = "github:adriankarlen/textfox";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
     let
-      system = "x84-64-linux";
+      system = "x86_64-linux";
 
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs {
+        inherit system;
+      };
     in{
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+          };
 
           modules = [
             ./configuration.nix

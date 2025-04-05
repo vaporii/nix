@@ -1,8 +1,9 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   imports = [
     ./home
+    inputs.textfox.homeManagerModules.default
   ];
 
   programs = {
