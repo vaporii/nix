@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./home
+    ../../home
     inputs.textfox.homeManagerModules.default
   ];
 

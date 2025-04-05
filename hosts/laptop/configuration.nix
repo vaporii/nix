@@ -12,7 +12,7 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "laptop"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   time.timeZone = "America/Chicago";
@@ -93,11 +93,6 @@
     kitty
     ags
   ];
-
-  # nixpkgs.config.packageOverrides = pkgs: {
-  #   nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/7fe9933afc6c65c9d931f43f33b8c8043803664d.tar.gz");
-  #   sha256 = "1bxxhqarr9546nnmkbw3s1hidpil5cbf1jjyw4gvr6hbz3f7kmv9";
-  # };
 
   system.stateVersion = "24.11"; # Did you read the comment?
 }
