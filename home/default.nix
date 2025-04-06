@@ -12,5 +12,7 @@
     ./firefox.nix
     ./rofi.nix
     ./fastfetch.nix
+    
+    ./services
   ];
 }
