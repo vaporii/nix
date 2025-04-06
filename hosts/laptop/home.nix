@@ -21,10 +21,10 @@
 
     settings = {
       preload = [
-        "${builtins.toString ../../assets/backgrounds/bocchi_the_rock_city.jpg}"
+        "${../../assets/backgrounds/bocchi_the_rock_city.jpg}"
       ];
       wallpaper = [
-        "eDP-1,${builtins.toString ../../assets/backgrounds/bocchi_the_rock_city.jpg}"
+        "eDP-1,${../../assets/backgrounds/bocchi_the_rock_city.jpg}"
       ];
     };
   };
