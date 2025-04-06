@@ -53,7 +53,7 @@
       "waybar"
     ];
 
-    monitor = ",1920x1080@60,0x0,1.25";
+    monitor = ",1920x1080@60,0x0,1";
 
     general = {
       gaps_in = 5;

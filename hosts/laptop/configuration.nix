@@ -98,7 +98,10 @@
   ];
 
   fonts.packages = with pkgs; [
+    twitter-color-emoji
     nerd-fonts.caskaydia-mono
+    noto-fonts
+    noto-fonts-cjk
   ];
 
   system.stateVersion = "24.11"; # Did you read the comment?
