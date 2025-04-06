@@ -70,6 +70,7 @@
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.variables.XCURSOR_SIZE = "20";
 
   environment.systemPackages = with pkgs; [
     ((vim_configurable.override { }).customize{
