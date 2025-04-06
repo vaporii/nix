@@ -10,5 +10,6 @@
     ./vscode.nix
     ./git.nix
     ./firefox.nix
+    ./rofi.nix
   ];
 }

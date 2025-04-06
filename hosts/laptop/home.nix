@@ -13,6 +13,7 @@
     ags.enable = true;
     vscode.enable = true;
     firefox.enable = true;
+    rofi.enable = true;
   };
 
   wayland.windowManager.hyprland = {
