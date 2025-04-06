@@ -33,10 +33,10 @@
       "$mod SHIFT, L, movewindow, d"
 
       # focus moving
-      "$mod SHIFT, H, movefocus, l"
-      "$mod SHIFT, J, movefocus, r"
-      "$mod SHIFT, K, movefocus, u"
-      "$mod SHIFT, L, movefocus, d"
+      "$mod, H, movefocus, l"
+      "$mod, J, movefocus, r"
+      "$mod, K, movefocus, u"
+      "$mod, L, movefocus, d"
     ]
     ++ (
       builtins.concatLists (builtins.genList (i:
