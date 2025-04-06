@@ -1,0 +1,177 @@
+* {
+    bg-col:  #1D2021;
+    bg-col-dark:  #1D2021;
+    bg-col-light: #32302F;
+    border-col: #504945;
+    selected-col: #3C3836;
+    blue: #458588;
+    fg-col: #FBF1C7;
+    fg-col2: #EBDBB2;
+    grey: #A89984;
+    //border: 1px;
+    //border-color: red;
+ 
+    width: 600;
+    font: "CaskaydiaMono Nerd Font 14";
+}
+ 
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+ 
+window {
+    height: 380px;
+    background-color: @bg-col;
+    children: [mainbox];
+    //border: 1px;
+    //border-color: @fg-col;
+}
+ 
+mainbox {
+    children: [inputbar,listview1];
+    background-color: @bg-col;
+    margin: 10px;
+}
+ 
+listview1 {
+    background-color: @bg-col;
+    padding: 6px 0px 0px;
+    children: [listview,mode-switcher];
+    border: 0 2px 2px 2px;
+    border-color: #504945;
+}
+ 
+inputbar {
+    children: [c1,entry1];
+    background-color: @bg-col;
+    padding: 0px;
+    margin: -5px 0px -2px 0px;
+    orientation: vertical;
+}
+ 
+c1 {
+    children: [c2, prompt, c3];
+    orientation: horizontal;
+    background-color: @bg-col;
+}
+ 
+c2 {
+    orientation: vertical;
+    children: [dummy1, c4];
+    width: 30px;
+    expand: false;
+    background-color: @bg-col;
+}
+ 
+dummy1 {
+    expand: true;
+    background-color: @bg-col;
+}
+ 
+c4 {
+    background-color: @bg-col;
+    border: 2px 0 0 2px;
+    border-color: @border-col;
+}
+ 
+c3 {
+    orientation: vertical;
+    children: [dummy2, c5];
+    expand: true;
+    background-color: @bg-col;
+}
+ 
+dummy2 {
+    expand: true;
+    background-color: @bg-col;
+}
+ 
+c5 {
+    background-color: @bg-col;
+    border: 2px 2px 0 0;
+    border-color: @border-col;
+}
+ 
+entry1 {
+    padding: 0 20px 0 20px;
+    children: [entry];
+    background-color: @bg-col;
+    border-color: @border-col;
+    border: 0 2px 0 2px;
+    margin: -2px 0px 0px 0px;
+}
+ 
+entry {
+    padding: 0 5px 0 5px;
+    margin: 5px 0 0 0;
+    text-color: @fg-col;
+    background-color: @bg-col-dark;
+ 
+}
+ 
+prompt {
+    background-color: @bg-col;
+    padding: 0px 0px 0px 0px;
+    text-color: #A89984;
+    margin: 0px 0px 0px 0px;
+}
+ 
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+ 
+listview {
+    border: 0px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    lines: 5;
+    background-color: @bg-col;
+}
+ 
+element {
+    padding: 5px;
+    background-color: @bg-col;
+    text-color: @fg-col;
+}
+ 
+element-icon {
+    size: 25px;
+}
+ 
+element selected {
+    background-color: @selected-col;
+    text-color: @fg-col2;
+}
+ 
+mode-switcher {
+    spacing: 0;
+}
+ 
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+ 
+button selected {
+  background-color: @bg-col;
+  text-color: @fg-col;
+}
+ 
+message {
+    background-color: @bg-col-light;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+ 
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @blue;
+    background-color: @bg-col-light;
+}
