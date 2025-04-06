@@ -18,7 +18,7 @@
       # umm idk what to name these but they do something
       "$mod, RETURN, exec, $terminal"
       "$mod SHIFT, Q, killactive"
-      "$mod, D, exec, rofi -modi drun,run,window -show drun"
+      "$mod, D, exec, ${pkgs.rofi}/bin/rofi -modi drun,run,window -show drun"
 
       # audio stuff
       ", XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next"
@@ -50,7 +50,7 @@
     );
 
     exec-once = [
-      "waybar"
+      "${pkgs.waybar}"
     ];
 
     monitor = ",1920x1080@60,0x0,1";
