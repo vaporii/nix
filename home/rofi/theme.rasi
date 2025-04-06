@@ -1,49 +1,120 @@
 * {
-    bg-col:  #26323B;
-    bg-col-light: #373E43;
-    border-col: #F4DDA6;
-    selected-col: #373E43;
-    blue: #67677E;
-    fg-col: #F4DDA6;
-    fg-col2:rgb(196, 177, 133);
-    grey: #68575A;
+    bg-col:  #1D2021;
+    bg-col-dark:  #1D2021;
+    bg-col-light: #32302F;
+    border-col: #504945;
+    selected-col: #3C3836;
+    blue: #458588;
+    fg-col: #FBF1C7;
+    fg-col2: #EBDBB2;
+    grey: #A89984;
+    //border: 1px;
+    //border-color: red;
  
     width: 600;
     font: "CaskaydiaMono Nerd Font 14";
- 
-    background-color: transparent;
 }
  
-element-text, element-icon , mode-switcher {
+element-text, element-icon, mode-switcher {
     background-color: inherit;
     text-color:       inherit;
 }
  
 window {
-    height: 360px;
-    border: 2px;
-    border-color: @border-col;
-    background-color: #26323B7E;
-    border-radius: 11px;
+    height: 380px;
+    background-color: @bg-col;
+    children: [mainbox];
+    //border: 1px;
+    //border-color: @fg-col;
 }
  
 mainbox {
-    //background-color: @bg-col;
+    children: [inputbar,listview1];
+    background-color: @bg-col;
+    margin: 10px;
+}
+ 
+listview1 {
+    background-color: @bg-col;
+    padding: 6px 0px 0px;
+    children: [listview,mode-switcher];
+    border: 0 2px 2px 2px;
+    border-color: #504945;
 }
  
 inputbar {
-    children: [prompt,entry];
-    //background-color: @bg-col;
-    border-radius: 5px;
-    padding: 2px;
+    children: [c1,entry1];
+    background-color: @bg-col;
+    padding: 0px;
+    margin: -5px 0px -2px 0px;
+    orientation: vertical;
+}
+ 
+c1 {
+    children: [c2, prompt, c3];
+    orientation: horizontal;
+    background-color: @bg-col;
+}
+ 
+c2 {
+    orientation: vertical;
+    children: [dummy1, c4];
+    width: 30px;
+    expand: false;
+    background-color: @bg-col;
+}
+ 
+dummy1 {
+    expand: true;
+    background-color: @bg-col;
+}
+ 
+c4 {
+    background-color: @bg-col;
+    border: 2px 0 0 2px;
+    border-color: @border-col;
+}
+ 
+c3 {
+    orientation: vertical;
+    children: [dummy2, c5];
+    expand: true;
+    background-color: @bg-col;
+}
+ 
+dummy2 {
+    expand: true;
+    background-color: @bg-col;
+}
+ 
+c5 {
+    background-color: @bg-col;
+    border: 2px 2px 0 0;
+    border-color: @border-col;
+}
+ 
+entry1 {
+    padding: 0 20px 0 20px;
+    children: [entry];
+    background-color: @bg-col;
+    border-color: @border-col;
+    border: 0 2px 0 2px;
+    margin: -2px 0px 0px 0px;
+}
+ 
+entry {
+    padding: 0 5px 0 5px;
+    margin: 5px 0 0 0;
+    text-color: @fg-col;
+    background-color: @bg-col-dark;
+ 
 }
  
 prompt {
-    background-color: @blue;
-    padding: 6px;
-    text-color: @bg-col;
-    border-radius: 3px;
-    margin: 20px 0px 0px 20px;
+    background-color: @bg-col;
+    padding: 0px 0px 0px 0px;
+    text-color: #A89984;
+    margin: 0px 0px 0px 0px;
 }
  
 textbox-prompt-colon {
@@ -51,26 +122,18 @@ textbox-prompt-colon {
     str: ":";
 }
  
-entry {
-    padding: 6px;
-    margin: 20px 0px 0px 10px;
-    text-color: @fg-col;
-    //background-color: @bg-col;
-}
- 
 listview {
     border: 0px 0px 0px;
-    padding: 6px 0px 0px;
     margin: 10px 0px 0px 20px;
     columns: 2;
     lines: 5;
-    //background-color: @bg-col;
+    background-color: @bg-col;
 }
  
 element {
     padding: 5px;
-    //background-color: @bg-col;
-    text-color: @fg-col  ;
+    background-color: @bg-col;
+    text-color: @fg-col;
 }
  
 element-icon {
@@ -78,8 +141,8 @@ element-icon {
 }
  
 element selected {
-    //background-color:  @selected-col ;
-    text-color: @fg-col2  ;
+    background-color: @selected-col;
+    text-color: @fg-col2;
 }
  
 mode-switcher {
@@ -89,18 +152,18 @@ mode-switcher {
 button {
     padding: 10px;
     background-color: @bg-col-light;
-    text-color: @blue;
+    text-color: @grey;
     vertical-align: 0.5; 
     horizontal-align: 0.5;
 }
  
 button selected {
-    background-color: @bg-col;
-    text-color: @blue;
+  background-color: @bg-col;
+  text-color: @fg-col;
 }
  
 message {
-    //background-color: @bg-col-light;
+    background-color: @bg-col-light;
     margin: 2px;
     padding: 2px;
     border-radius: 5px;
@@ -110,5 +173,5 @@ textbox {
     padding: 6px;
     margin: 20px 0px 0px 20px;
     text-color: @blue;
-    //background-color: @bg-col-light;
+    background-color: @bg-col-light;
 }
