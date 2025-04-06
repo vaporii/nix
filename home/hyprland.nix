@@ -30,7 +30,7 @@
       "$mod SHIFT, H, movewindow, l"
       "$mod SHIFT, J, movewindow, u"
       "$mod SHIFT, K, movewindow, d"
-      "$mod SHIFT, L, movewindow, d"
+      "$mod SHIFT, L, movewindow, r"
 
       # focus moving
       "$mod, H, movefocus, l"
