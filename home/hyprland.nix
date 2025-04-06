@@ -21,10 +21,10 @@
       "$mod, D, exec, rofi -show drun"
 
       # audio stuff
-      ", XF86AudioNext, exec, playerctl next"
-      ", XF86AudioPlay, exec, playerctl play-pause"
-      ", XF86AudioPause, exec, playerctl play-pause"
-      ", XF86AudioPrev, exec, playerctl previous"
+      ", XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next"
+      ", XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
+      ", XF86AudioPause, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
+      ", XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous"
 
       # window moving
       "$mod SHIFT, H, movewindow, l"
