@@ -101,7 +101,7 @@
     twitter-color-emoji
     nerd-fonts.caskaydia-mono
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
   ];
 
   system.stateVersion = "24.11"; # Did you read the comment?
