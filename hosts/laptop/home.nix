@@ -16,6 +16,19 @@
     rofi.enable = true;
   };
 
+  services.hyprpaper = {
+    enable = true;
+
+    settings = {
+      preload = [
+        "${builtins.toString ../../assets/backgrounds/bocchi_the_rock.jpg}"
+      ];
+      wallpaper = [
+        "eDP-1,${builtins.toString ../../assets/backgrounds/bocchi_the_rock.jpg}"
+      ];
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
 
