@@ -14,6 +14,7 @@
     vscode.enable = true;
     firefox.enable = true;
     rofi.enable = true;
+    fastfetch.enable = true;
   };
 
   services.hyprpaper = {

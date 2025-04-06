@@ -3,7 +3,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
-    "$terminal" = "kitty";
+    "$terminal" = "${pkgs.kitty}/bin/kitty";
 
     bindle = [
       ", XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl s +2%"
