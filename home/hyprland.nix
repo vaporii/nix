@@ -4,10 +4,39 @@
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     "$terminal" = "kitty";
+
+    bindle = [
+      ", XF86MonBrightnessUp, exec, brightnessctl s +2%"
+      ", XF86MonBrightnessDown, exec, brightnessctl s 2%-"
+      ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+      ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    ];
   
     bind = [
+      # umm idk what to name these but they do something
       "$mod, RETURN, exec, $terminal"
       "$mod SHIFT, Q, killactive"
+      "$mod, D, exec, rofi -show drun"
+
+      # audio stuff
+      ", XF86AudioNext, exec, playerctl next"
+      ", XF86AudioPlay, exec, playerctl play-pause"
+      ", XF86AudioPause, exec, playerctl play-pause"
+      ", XF86AudioPrev, exec, playerctl previous"
+
+      # window moving
+      "$mod SHIFT, H, movewindow, l"
+      "$mod SHIFT, J, movewindow, r"
+      "$mod SHIFT, K, movewindow, u"
+      "$mod SHIFT, L, movewindow, d"
+
+      # focus moving
+      "$mod SHIFT, H, movefocus, l"
+      "$mod SHIFT, J, movefocus, r"
+      "$mod SHIFT, K, movefocus, u"
+      "$mod SHIFT, L, movefocus, d"
     ]
     ++ (
       builtins.concatLists (builtins.genList (i:
@@ -24,7 +53,7 @@
       "waybar"
     ];
 
-    monitor = ",1920x1080@60,0x0,1";
+    monitor = ",1920x1080@60,0x0,1.25";
 
     general = {
       gaps_in = 5;
