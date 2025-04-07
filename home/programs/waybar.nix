@@ -6,6 +6,10 @@
       layer = "top";
       position = "top";
       height = 30;
+      margin-left = 10;
+      margin-right = 10;
+      margin-top = 10;
+      margin-bottom = 0;
       
       modules-left = [ "hyprland/workspaces" ];
       modules-right = [ "clock" ];
@@ -20,4 +24,10 @@
       };
     };
   };
+
+  programs.waybar.style = ''
+    window#waybar {
+      background: #282828;
+    }
+  '';
 }
