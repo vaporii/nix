@@ -19,7 +19,7 @@
       "$mod, RETURN, exec, $terminal"
       "$mod SHIFT, Q, killactive"
       "$mod, D, exec, ${pkgs.rofi}/bin/rofi -modi drun,run,window -show drun"
-      "$mod SHIFT, S, exec, ${pkgs.flameshot}/bin/flameshot gui"
+      "$mod SHIFT, S, exec, flameshot gui"
 
       # audio stuff
       ", XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next"

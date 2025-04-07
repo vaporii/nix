@@ -30,5 +30,9 @@
     portalPackage = null;
   };
 
+  home.shellAliases = {
+    echo = "printf '\\033[2J\\033[3J\\033[1;1H'";
+  };
+
   home.stateVersion = "24.11";
 }
