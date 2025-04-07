@@ -19,6 +19,7 @@
       "$mod, RETURN, exec, $terminal"
       "$mod SHIFT, Q, killactive"
       "$mod, D, exec, ${pkgs.rofi}/bin/rofi -modi drun,run,window -show drun"
+      "$mod SHIFT, S, exec "
 
       # audio stuff
       ", XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next"
@@ -50,7 +51,7 @@
     );
 
     exec-once = [
-      "${pkgs.waybar}"
+      "${pkgs.waybar}/bin/waybar"
     ];
 
     monitor = ",1920x1080@60,0x0,1";
