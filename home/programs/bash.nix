@@ -6,8 +6,10 @@
       clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
     };
 
-    promptPluginInit = [
-      ''eval "$(${pkgs.starship} init bash)"''
-    ];
+    historyControl = [ "erasedups" ];
+
+    # initExtra = ''
+    #   eval "$(${pkgs.starship} init bash)"
+    # '';
   };
 }
