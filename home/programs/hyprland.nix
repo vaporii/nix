@@ -3,6 +3,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
+    "$modalt" = "CAPS";
     "$terminal" = "${pkgs.kitty}/bin/kitty";
 
     bindle = [
@@ -12,6 +13,11 @@
       ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    ];
+
+    bindm = [
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
     ];
   
     bind = [
@@ -27,6 +33,9 @@
       ", XF86AudioPause, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
       ", XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous"
 
+      "$mod, F, fullscreen, 0"
+      "$mod SHIFT, SPACE, togglefloating, active"
+
       # window moving
       "$mod SHIFT, H, movewindow, l"
       "$mod SHIFT, J, movewindow, u"
@@ -38,6 +47,8 @@
       "$mod, J, movefocus, u"
       "$mod, K, movefocus, d"
       "$mod, L, movefocus, r"
+
+
     ]
     ++ (
       builtins.concatLists (builtins.genList (i:
@@ -149,6 +160,8 @@
       sensitivity = 0;
 
       touchpad.natural_scroll = true;
+
+      kb_options = "caps:none";
     };
   };
 }
