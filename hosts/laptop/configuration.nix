@@ -73,6 +73,8 @@
     extraSpecialArgs = { inherit inputs; };
 
     users.vaporii = import ./home.nix;
+
+    backupFileExtension = "backup";
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

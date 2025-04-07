@@ -11,7 +11,7 @@
     userSettings = {
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
-      "workbench.colorTheme" = "Default Dark Modern";
+      "workbench.colorTheme" = "Gruvbox Dark Medium";
     };
   };
 }
