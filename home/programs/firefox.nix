@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, ... }:
 
 {
   programs.firefox = {
@@ -18,13 +18,18 @@
       OverridePostUpdatePage = "";
       DontCheckDefaultBrowser = true;
       DisplayBookmarksToolbar = "newtab";
+      FirefoxSuggest.SponsoredSuggestions = false;
+      FirefoxHome = {
+        SponsoredPocket = false;
+        SponsoredTopSites = false;
+      };
     };
     profiles.default = {
-      extensions = {
-        # packages = with pkgs.nur.repos.rycee.firefox-addons; [
-        #   ublock-origin
-        # ];
-      };
+      extensions = with inputs.firefox-addons; [
+        bitwarden
+        ublock-origin
+        sponsorblock
+      ];
     };
   };
 }
