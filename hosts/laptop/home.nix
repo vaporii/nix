@@ -19,7 +19,7 @@
 
   services = {
     hyprpaper.enable = true;
-
+    flameshot.enable = true;
 
   };
 

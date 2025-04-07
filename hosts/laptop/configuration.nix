@@ -95,6 +95,7 @@
     git
     kitty
     ags
+    grim
   ];
 
   fonts.packages = with pkgs; [
