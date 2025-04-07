@@ -11,5 +11,6 @@
     ./firefox.nix
     ./rofi.nix
     ./fastfetch.nix
+    ./bash.nix
   ];
 }
