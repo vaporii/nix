@@ -12,5 +12,6 @@
     ./rofi.nix
     ./fastfetch.nix
     ./bash.nix
+    ./starship.nix
   ];
 }

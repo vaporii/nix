@@ -15,6 +15,7 @@
     rofi.enable = true;
     fastfetch.enable = true;
     bash.enable = true;
+    starship.enable = true;
   };
 
   services = {

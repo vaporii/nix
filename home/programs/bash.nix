@@ -1,7 +1,13 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  programs.bash.shellAliases = {
-    clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
+  programs.bash = {
+    shellAliases = {
+      clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
+    };
+
+    promptPluginInit = [
+      ''eval "$(${pkgs.starship} init bash)"''
+    ];
   };
 }
