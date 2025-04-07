@@ -15,6 +15,7 @@
     firefox.enable = true;
     rofi.enable = true;
     fastfetch.enable = true;
+    bash.enable = true;
   };
 
   services = {
@@ -31,7 +32,7 @@
   };
 
   home.shellAliases = {
-    clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
+    c = "printf '\\033[2J\\033[3J\\033[1;1H'";
   };
 
   home.stateVersion = "24.11";

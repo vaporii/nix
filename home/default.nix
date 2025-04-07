@@ -2,17 +2,8 @@
 
 {
   imports = [
-    ./hyprland.nix
-    ./kitty.nix
-    ./waybar.nix
+    ./programs
     ./config.nix
-    ./ags.nix
-    ./vscode.nix
-    ./git.nix
-    ./firefox.nix
-    ./rofi.nix
-    ./fastfetch.nix
-    
     ./services
   ];
 }
