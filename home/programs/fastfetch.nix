@@ -9,7 +9,7 @@
     settings = {
       logo = {
         type = "kitty";
-        source = "$(ls ${../assets/fastfetch}/*.png | shuf -n 1)";
+        source = "$(ls ${../../assets/fastfetch}/*.png | shuf -n 1)";
 
         width = 33;
         height = 40;
