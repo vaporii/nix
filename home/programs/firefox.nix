@@ -25,14 +25,17 @@
       };
     };
     profiles.default = {
+      search.default = "ddg";
       settings = {
         "extensions.autoDisableScopes" = 0;
       };
-      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
-        bitwarden
-        ublock-origin
-        sponsorblock
-      ];
+      extensions = {
+        packages = with inputs.firefox-addons.packages."x86_64-linux"; [
+          bitwarden
+          ublock-origin
+          sponsorblock
+        ];
+      };
     };
   };
 }
