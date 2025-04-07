@@ -1,7 +1,32 @@
 * {
   font-family: "CaskaydiaMono Nerd Font";
+  color: #ebdbb2;
+  font-size: 16px;
+  border: none;
 }
 
 window#waybar {
-  background: #282828;
+  background: transparent;
+  border: none;
+}
+
+#workspaces {
+  background-color: #282828;
+}
+
+#workspaces button.focused {
+  background-color: #665c54;
+}
+
+#workspaces button.urgent {
+  background-color: #fb4934;
+}
+
+#battery {
+  background-color: #282828;
+}
+
+#window {
+  background-color: #282828;
+  outline: 2px solid #a89984;
 }

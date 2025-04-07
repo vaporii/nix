@@ -10,7 +10,7 @@
     magenta = "#b16286"; brightMagenta = "#d3869b";
     cyan    = "#689d6a"; brightCyan    = "#8ec07c";
     white   = "#a89984"; brightWhite   = "#ebdbb2";
-    orange = "#d65d0e"; brightOrange   = "#fe8019";
+    orange  = "#d65d0e"; brightOrange  = "#fe8019";
 
     bg  = "#282828";
     bg0 = "#282828";
