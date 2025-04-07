@@ -25,9 +25,5 @@
     };
   };
 
-  programs.waybar.style = ''
-    window#waybar {
-      background: #282828;
-    }
-  '';
+  programs.waybar.style = ./waybar/style.css;
 }

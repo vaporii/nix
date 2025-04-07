@@ -3,7 +3,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
-    "$modalt" = "CAPS";
+    "$modalt" = "MOD3";
     "$terminal" = "${pkgs.kitty}/bin/kitty";
 
     bindle = [
@@ -48,7 +48,12 @@
       "$mod, K, movefocus, d"
       "$mod, L, movefocus, r"
 
+      # workspaces and shit
+      "$modalt, D, workspace, name:"
+      "$modalt, F, workspace, name:󰈹"
 
+      "$modalt SHIFT, D, movetoworkspace, name:"
+      "$modalt SHIFT, F, movetoworkspace, name:󰈹"
     ]
     ++ (
       builtins.concatLists (builtins.genList (i:
@@ -161,7 +166,7 @@
 
       touchpad.natural_scroll = true;
 
-      kb_options = "caps:none";
+      kb_options = "caps:hyper";
     };
   };
 }

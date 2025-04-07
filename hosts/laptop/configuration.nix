@@ -74,7 +74,7 @@
 
     users.vaporii = import ./home.nix;
 
-    backupFileExtension = "backup";
+    backupFileExtension = "backup1";
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
