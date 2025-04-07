@@ -25,7 +25,10 @@
       };
     };
     profiles.default = {
-      extensions = with inputs.firefox-addons; [
+      settings = {
+        "extensions.autoDisableScopes" = 0;
+      };
+      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
         bitwarden
         ublock-origin
         sponsorblock

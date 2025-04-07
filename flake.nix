@@ -14,7 +14,7 @@
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
-    }.packages."x86_64-linux";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
