@@ -29,7 +29,8 @@
     restart = false;
     settings = rec {
       initial_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu -t";
+        # command = "${pkgs.hyprland}/bin/Hyprland";
         user = "vaporii";
       };
       default_session = initial_session;
