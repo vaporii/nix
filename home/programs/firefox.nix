@@ -35,8 +35,14 @@
           bitwarden
           ublock-origin
           sponsorblock
+          sidebery
         ];
       };
+      userContent = ''
+        * {
+          border-radius: 0;
+        }
+      '';
     };
   };
 }
