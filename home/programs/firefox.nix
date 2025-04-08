@@ -26,6 +26,7 @@
     };
     profiles.default = {
       search.default = "ddg";
+      search.force = true;
       settings = {
         "extensions.autoDisableScopes" = 0;
       };
