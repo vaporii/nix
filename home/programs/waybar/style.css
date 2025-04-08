@@ -40,3 +40,10 @@ window#waybar {
   padding: 0 15px;
   border: 2px solid #a89984;
 }
+
+#tray {
+  background-color: #282828;
+  border: 2px solid #a89984;
+  padding: 0 15px;
+  margin-left: 10px;
+}

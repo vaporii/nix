@@ -13,7 +13,7 @@
       
       modules-left = [ "hyprland/workspaces" "tray" ];
       modules-center = [ "hyprland/window" ];
-      modules-right = [ "battery" "clock" ];
+      modules-right = [ "memory" "cpu" "temperature" "battery" "clock" ];
 
       "hyprland/workspaces" = {
         disable-scroll = true;
