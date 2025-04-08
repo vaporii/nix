@@ -23,18 +23,6 @@ window#waybar {
   background-color: #fb4934;
 }
 
-#battery {
-  background-color: #282828;
-  border: 2px solid #a89984;
-  padding: 0 10px;
-}
-
-#clock {
-  border: 2px solid #a89984;
-  margin-left: 10px;
-  padding: 0 10px;
-}
-
 #window {
   background-color: #282828;
   padding: 0 15px;
@@ -46,4 +34,35 @@ window#waybar {
   border: 2px solid #a89984;
   padding: 0 15px;
   margin-left: 10px;
+}
+
+#clock {
+  border: 2px solid #a89984;
+  margin-left: 10px;
+  padding: 0 10px;
+}
+
+#memory,
+#cpu,
+#temperature {
+  background-color: #282828;
+  border: 2px solid #a89984;
+  padding: 0 10px;
+}
+
+#temperature,
+#cpu {
+  border-left: none;
+  border-right: none;
+}
+
+#memory {
+  border-right: none;
+}
+
+#battery {
+  background-color: #282828;
+  border: 2px solid #a89984;
+  border-left: none;
+  padding: 0 10px;
 }

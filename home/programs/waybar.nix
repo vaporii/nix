@@ -36,6 +36,18 @@
 
         format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
       };
+
+      temperature = {
+        format = "󰔏 {temperatureC}°C";
+      };
+
+      cpu = {
+        format = "󰍛 {usage}%";
+      };
+
+      memory = {
+        format = " {}%";
+      };
     };
   };
 
