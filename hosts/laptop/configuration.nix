@@ -107,6 +107,8 @@
     grim
   ];
 
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
   fonts.packages = with pkgs; [
     twitter-color-emoji
     nerd-fonts.caskaydia-mono

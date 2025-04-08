@@ -81,8 +81,8 @@
       # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
       # "col.inactive_border" = "rgba(595959aa)";
       
-      "col.active_border" = "rgba(a89984ff)";
-      "col.inactive_border" = "rgba(a899847e)";
+      "col.active_border" = "rgba(665C54ff)";
+      "col.inactive_border" = "rgba(665C547e)";
 
       resize_on_border = true;
 
