@@ -35,14 +35,45 @@
           bitwarden
           ublock-origin
           sponsorblock
-          sidebery
+          firefox-color
         ];
       };
-      userContent = ''
+      userChrome = ''
         * {
           border-radius: 0;
         }
+
+        div#sidebar-wrapper vbox#sidebar-box.chromeclass-extrachrome {
+          background: #282828 !important;
+          margin-right: 2px !important;
+        }
+
+        body hbox#browser tabbox#tabbrowser-tabbox {
+          background: #282828 !important;
+        }
+
+        hbox#browser tabbox#tabbrowser-tabbox::before {
+          margin: -1.3rem 0rem !important;
+        }
+
+        toolbar#PersonalToolbar.browser-toolbar.chromeclass-directories.instant.customization-target::before {
+          margin: -1.0rem .4rem !important;
+        }
+
+        body toolbox#navigator-toolbox.browser-toolbox-background {
+          background: #282828 !important;
+        }
+        
+        html#main-window body hbox#browser {
+          background: #282828 !important;
+        }
       '';
     };
+  };
+
+  imports = [ inputs.textfox.homeManagerModules.default ];
+  textfox = {
+    enable = true;
+    profile = "default";
   };
 }

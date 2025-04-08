@@ -13,6 +13,7 @@ window#waybar {
   background-color: #282828;
   padding: 0 10px;
   border: 2px solid #a89984;
+  border-radius: 10px;
 }
 
 #workspaces button.focused {
@@ -27,6 +28,7 @@ window#waybar {
   background-color: #282828;
   padding: 0 15px;
   border: 2px solid #a89984;
+  border-radius: 10px;
 }
 
 #tray {
@@ -34,12 +36,14 @@ window#waybar {
   border: 2px solid #a89984;
   padding: 0 15px;
   margin-left: 10px;
+  border-radius: 10px;
 }
 
 #clock {
   border: 2px solid #a89984;
   margin-left: 10px;
   padding: 0 10px;
+  border-radius: 10px;
 }
 
 #memory,
@@ -58,6 +62,9 @@ window#waybar {
 
 #memory {
   border-right: none;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 #battery {
@@ -65,4 +72,8 @@ window#waybar {
   border: 2px solid #a89984;
   border-left: none;
   padding: 0 10px;
+  
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
