@@ -49,11 +49,11 @@
       "$mod, L, movefocus, r"
 
       # workspaces and shit
-      "$modalt, D, workspace, name:"
-      "$modalt, F, workspace, name:󰈹"
+      "$modalt, D, workspace, name: "
+      "$modalt, F, workspace, name:󰈹 "
 
-      "$modalt SHIFT, D, movetoworkspace, name:"
-      "$modalt SHIFT, F, movetoworkspace, name:󰈹"
+      "$modalt SHIFT, D, movetoworkspace, name: "
+      "$modalt SHIFT, F, movetoworkspace, name:󰈹 "
     ]
     ++ (
       builtins.concatLists (builtins.genList (i:

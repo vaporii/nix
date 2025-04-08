@@ -2,7 +2,6 @@
   font-family: "CaskaydiaMono Nerd Font";
   color: #ebdbb2;
   font-size: 16px;
-  border: none;
 }
 
 window#waybar {
@@ -12,6 +11,8 @@ window#waybar {
 
 #workspaces {
   background-color: #282828;
+  padding: 0 10px;
+  border: 2px solid #a89984;
 }
 
 #workspaces button.focused {
@@ -24,9 +25,18 @@ window#waybar {
 
 #battery {
   background-color: #282828;
+  border: 2px solid #a89984;
+  padding: 0 10px;
+}
+
+#clock {
+  border: 2px solid #a89984;
+  margin-left: 10px;
+  padding: 0 10px;
 }
 
 #window {
   background-color: #282828;
-  outline: 2px solid #a89984;
+  padding: 0 15px;
+  border: 2px solid #a89984;
 }
