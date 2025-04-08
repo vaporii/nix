@@ -7,9 +7,5 @@
     };
 
     historyControl = [ "erasedups" ];
-
-    # initExtra = ''
-    #   eval "$(${pkgs.starship} init bash)"
-    # '';
   };
 }

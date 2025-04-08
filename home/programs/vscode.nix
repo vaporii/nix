@@ -12,16 +12,15 @@
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
       "workbench.colorTheme" = "Gruvbox Dark Medium";
-      nixpkgs = {
-        expr = "import <nixpkgs> { }";
-      };
-
-      options = {
-        nixos = {
-          expr = "(builtins.getFlake \"\").nixosConfigurations.laptop.options";
-        };
-        home_manager = {
-          expr = "(builtins.getFlake \"\").nixosConfigurations.laptop.options";
+      "nix.serverSettings" = {
+        nixd = {
+          nixpkgs = {
+            expr = "import <nixpkgs> { }";
+          };
+          options = rec {
+            nixos.expr = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.laptop.options";
+            home-manager.expr = "${nixos.expr}.home-manager.users.type.getSubOptions [ ]";
+          };
         };
       };
     };
