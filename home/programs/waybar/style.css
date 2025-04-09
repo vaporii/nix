@@ -16,8 +16,16 @@ window#waybar {
   border-radius: 10px;
 }
 
-#workspaces button.focused {
-  background-color: #665C54;
+#workspaces button {
+  border-radius: 0;
+}
+
+#workspaces button.active {
+  background-color: #504945;
+}
+
+#workspaces button.empty {
+  color: #a89984;
 }
 
 #workspaces button.urgent {
