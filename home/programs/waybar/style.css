@@ -48,7 +48,9 @@ window#waybar {
 
 #memory,
 #cpu,
-#temperature {
+#network,
+#temperature,
+#battery {
   background-color: #282828;
   border: 2px solid #665C54;
   padding: 0 10px;
@@ -62,16 +64,14 @@ window#waybar {
 
 #memory {
   border-right: none;
+  
   border-radius: 10px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
 #battery {
-  background-color: #282828;
-  border: 2px solid #665C54;
   border-left: none;
-  padding: 0 10px;
   
   border-radius: 10px;
   border-top-left-radius: 0;
