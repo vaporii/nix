@@ -48,6 +48,12 @@
       memory = {
         format = " {}%";
       };
+
+      network = {
+        format-wifi = "󰤥 {essid}";
+        tooltip-format = "signal strength: {signalStrength}%";
+        format-disconnected = "󰤮 Disconnected";
+      };
     };
   };
 
