@@ -8,11 +8,11 @@
 
   home.persistence."/persist/home" = {
     directories = [
+      "Persist"
       ".ssh"
       ".mozilla"
       ".config/equibop"
       ".config/VSCodium/User/workspaceStorage"
-      "persist"
     ];
     allowOther = true;
   };
