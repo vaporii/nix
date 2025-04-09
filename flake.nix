@@ -3,6 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -32,6 +37,9 @@
           specialArgs = { inherit inputs; };
 
           modules = [
+            inputs.disko.nixosModules.default
+            (import ./hosts/laptop/disko.nix { device = "/dev/nvme0n1"; })
+
             ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.default
           ];
