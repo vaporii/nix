@@ -14,7 +14,6 @@
       "/etc/nixos"
       "/var/log"
       "/var/lib/nixos"
-      "/home/vaporii/.ssh"
       "/etc/NetworkManager/system-connections"
     ];
     files = [
