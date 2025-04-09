@@ -13,7 +13,7 @@
       
       modules-left = [ "hyprland/workspaces" "tray" ];
       modules-center = [ "hyprland/window" ];
-      modules-right = [ "memory" "cpu" "temperature" "network" "battery" "clock" ];
+      modules-right = [ "memory" "cpu" "temperature" "backlight" "network" "battery" "clock" ];
 
       "hyprland/workspaces" = {
         disable-scroll = true;
@@ -53,6 +53,11 @@
         format-wifi = "󰤥 {essid}";
         tooltip-format = "signal strength: {signalStrength}%";
         format-disconnected = "󰤮 Disconnected";
+      };
+
+      backlight = {
+        format = "{icon} {percent}%";
+        format-icons = ["" "" "" "" "" "" "" "" "" ];
       };
     };
   };

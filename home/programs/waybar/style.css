@@ -50,6 +50,7 @@ window#waybar {
 #cpu,
 #network,
 #temperature,
+#backlight,
 #battery {
   background-color: #282828;
   border: 2px solid #665C54;
@@ -58,6 +59,7 @@ window#waybar {
 
 #temperature,
 #cpu,
+#backlight,
 #network {
   border-left: none;
   border-right: none;
