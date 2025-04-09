@@ -22,9 +22,11 @@
     };
 
     textfox.url = "github:adriankarlen/textfox";
+
+    impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, impermanence, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -42,6 +44,7 @@
 
             ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.default
+            impermanence.nixosModules.impermanence
           ];
         };
       };
