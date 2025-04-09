@@ -10,6 +10,8 @@
     directories = [
       ".ssh"
       ".mozilla"
+      ".config/equibop"
+      ".config/VSCodium/User/workspaceStorage"
     ];
     allowOther = true;
   };
