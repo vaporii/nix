@@ -12,6 +12,7 @@
       ".mozilla"
       ".config/equibop"
       ".config/VSCodium/User/workspaceStorage"
+      "persist"
     ];
     allowOther = true;
   };
