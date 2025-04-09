@@ -1,9 +1,18 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   imports = [
+    inputs.impermanence.nixosModules.home-manager.impermanence
     ../../home
   ];
+
+  home.persistence."/persist/home" = {
+    directories = [
+      ".ssh"
+      ".mozilla"
+    ];
+    allowOther = true;
+  };
 
   programs = {
     git.enable = true;
