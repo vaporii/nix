@@ -6,6 +6,21 @@
       (import ./disko.nix { device = "/dev/nvme0n1"; })
       ./hardware-configuration.nix
     ];
+  
+  fileSystems."/persist".neededForBoot = true;
+  environment.persistence."/persist/system" = {
+    hideMounts = true;
+    directories = [
+      "/etc/nixos"
+      "/var/log"
+      "/var/lib/nixos"
+      "/home/vaporii/.ssh"
+      "/etc/NetworkManager/system-connections"
+    ];
+    files = [
+      "/etc/machine-id"
+    ];
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
