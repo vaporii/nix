@@ -12,7 +12,10 @@
       ".ssh"
       ".mozilla"
       ".config/equibop"
-      ".config/VSCodium/User/workspaceStorage"
+      ".config/VSCodium"
+    ];
+    files = [
+      ".bash_history"
     ];
     allowOther = true;
   };
