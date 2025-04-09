@@ -12,7 +12,7 @@ window#waybar {
 #workspaces {
   background-color: #282828;
   padding: 0 10px;
-  border: 2px solid #665C54;
+  /* border: 2px solid #665C54; */
   border-radius: 10px;
 }
 
@@ -21,7 +21,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background-color: #504945;
+  background-color: #3c3836;
 }
 
 #workspaces button.empty {
@@ -35,20 +35,20 @@ window#waybar {
 #window {
   background-color: #282828;
   padding: 0 15px;
-  border: 2px solid #665C54;
+  /* border: 2px solid #665C54; */
   border-radius: 10px;
 }
 
 #tray {
   background-color: #282828;
-  border: 2px solid #665C54;
+  /* border: 2px solid #665C54; */
   padding: 0 15px;
-  margin-left: 10px;
+  margin-left: 20px;
   border-radius: 10px;
 }
 
 #clock {
-  border: 2px solid #665C54;
+  /* border: 2px solid #665C54; */
   margin-left: 10px;
   padding: 0 10px;
   border-radius: 10px;
@@ -61,7 +61,7 @@ window#waybar {
 #backlight,
 #battery {
   background-color: #282828;
-  border: 2px solid #665C54;
+  /* border: 2px solid #665C54; */
   padding: 0 10px;
 }
 
@@ -69,22 +69,27 @@ window#waybar {
 #cpu,
 #backlight,
 #network {
-  border-left: none;
   border-right: none;
 }
 
 #memory {
   border-right: none;
-
-  border-radius: 10px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
 }
 
 #battery {
   border-left: none;
-  
-  border-radius: 10px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+}
+
+#custom-start {
+  font-size: 0;
+  border-top: 40px solid transparent;
+  border-right: 20px solid #282828;
+  margin-right: 10px;
+}
+
+#custom-end {
+  font-size: 0;
+  border-top: 40px solid #282828;
+  border-right: 20px solid transparent;
+  margin-left: 10px;
 }

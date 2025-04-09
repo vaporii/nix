@@ -5,19 +5,42 @@
     mainBar = {
       layer = "top";
       position = "top";
+      mode = "dock";
       height = 40;
       margin-left = 10;
       margin-right = 10;
       margin-top = 10;
       margin-bottom = 0;
+
+      spacing = -10; # fucked up hack for the diagonals
       
       modules-left = [ "hyprland/workspaces" "tray" ];
       modules-center = [ "hyprland/window" ];
-      modules-right = [ "memory" "cpu" "temperature" "backlight" "network" "battery" "clock" ];
+      modules-right = [
+        "memory" "custom/end" "custom/start"
+        "cpu" "custom/end" "custom/start"
+        "temperature" "custom/end" "custom/start"
+        "backlight" "custom/end" "custom/start"
+        "network" "custom/end" "custom/start"
+        "battery" "custom/end"
+        "clock"
+      ];
+
+      "custom/start" = {
+        format = " ";
+      };
+
+      "custom/end" = {
+        format = " ";
+      };
 
       "hyprland/workspaces" = {
         disable-scroll = true;
         all-outputs = true;
+      };
+
+      "hyprland/window" = {
+        max-length = 40;
       };
 
       clock = {
