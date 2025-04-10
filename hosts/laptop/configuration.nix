@@ -26,6 +26,16 @@
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.timeout = 5;
+  boot.loader.grub.extraEntries = ''
+    menuentry "asciiquarium" {
+      set root=(hd0,2)
+      loopback loop (hd0,2)/home/vaporii/Persist/projects/os/asciiquarium-os/asciiquarium.img
+      linux (loop)/boot/vmlinuz-linux root=/dev/loop0
+      initrd (loop)/boot/initramfs-linux.img
+      boot
+    }
+  '';
 
   boot.initrd.postResumeCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
