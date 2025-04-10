@@ -32,7 +32,7 @@
       set root=(hd0,2)
       loopback loop (hd0,2)/home/vaporii/Persist/projects/os/asciiquarium-os/asciiquarium.img
       linux (loop)/boot/vmlinuz-linux root=/dev/loop0
-      initrd (loop)/boot/initramfs-linux.img
+      initrd (loop)/boot/initramfs-lts.img
       boot
     }
   '';
