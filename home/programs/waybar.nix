@@ -22,7 +22,7 @@
         "temperature" "custom/end" "custom/start"
         "backlight" "custom/end" "custom/start"
         "network" "custom/end" "custom/start"
-        "battery" "custom/end"
+        "battery" "custom/end" "custom/start"
         "clock"
       ];
 

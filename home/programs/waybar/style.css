@@ -1,7 +1,7 @@
 * {
   font-family: "CaskaydiaMono Nerd Font";
   color: #ebdbb2;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 window#waybar {
@@ -11,9 +11,8 @@ window#waybar {
 
 #workspaces {
   background-color: #282828;
-  padding: 0 10px;
+  /* padding: 0 10px; */
   /* border: 2px solid #665C54; */
-  border-radius: 10px;
 }
 
 #workspaces button {
@@ -34,24 +33,15 @@ window#waybar {
 
 #window {
   background-color: #282828;
-  padding: 0 15px;
+  padding: 0 10px;
   /* border: 2px solid #665C54; */
-  border-radius: 10px;
 }
 
 #tray {
   background-color: #282828;
   /* border: 2px solid #665C54; */
-  padding: 0 15px;
+  /* padding: 0 15px; */
   margin-left: 20px;
-  border-radius: 10px;
-}
-
-#clock {
-  /* border: 2px solid #665C54; */
-  margin-left: 10px;
-  padding: 0 10px;
-  border-radius: 10px;
 }
 
 #memory,
@@ -59,25 +49,19 @@ window#waybar {
 #network,
 #temperature,
 #backlight,
-#battery {
+#battery,
+#clock {
   background-color: #282828;
   /* border: 2px solid #665C54; */
-  padding: 0 10px;
-}
-
-#temperature,
-#cpu,
-#backlight,
-#network {
-  border-right: none;
+  /* padding: 0 10px; */
 }
 
 #memory {
-  border-right: none;
+  padding-left: 10px;
 }
 
-#battery {
-  border-left: none;
+#clock {
+  padding-right: 10px;
 }
 
 #custom-start {
