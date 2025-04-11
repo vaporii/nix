@@ -26,17 +26,16 @@
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.timeout = 5;
+  boot.loader.timeout = 5;
   boot.loader.grub.extraEntries = ''
     menuentry "asciiquarium" {
       insmod lvm
-      insmod ext2
       set root=(lvm/root_vg-root)
 
-      loopback loop /persist/home/Persist/projects/os/asciiquarium-os/asciiquarium.img
+      loopback loop /persist/home/Persist/projects/os/asciiquarium-os/temp-asciiquarium.img
 
-      linux (loop)/boot/vmlinuz-lts root=/dev/loop0 modules=loop,squashfs,sd-mod,usb-storage quiet
-      initrd (loop)/boot/initramfs-lts.img
+      linux (loop)/boot/vmlinuz-lts root=/dev/loop0 rootfstype=ext4 modules=loop,squashfs,sd-mod,usb-storage quiet
+      initrd (loop)/boot/initramfs-lts
       boot
     }
   '';
