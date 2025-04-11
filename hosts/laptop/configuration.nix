@@ -29,11 +29,13 @@
   boot.loader.grub.timeout = 5;
   boot.loader.grub.extraEntries = ''
     menuentry "asciiquarium" {
-      set root=(hd0,gpt2)
-      linux /persist/home/Persist/projects/os/asciiquarium-os/asciiquarium.img rootflags=subvol=persist
-      # loopback loop (hd0,2)/persist/home/Persist/projects/os/asciiquarium-os/asciiquarium.img
-      # linux (loop)/boot/vmlinuz-lts root=/dev/loop0
-      # initrd (loop)/boot/initramfs-lts.img
+      insmod lvm
+      insmod btrfs
+      set root=(lvm/root_vg/root)
+      search --no-floppy --set=root --file /persist/home/Persist/projects/os/asciiquarium-os/asciiquarium.img
+      loopback loop /persist/home/Persist/projects/os/asciiquarium-os/asciiquarium.img
+      linux (loop)/boot/vmlinuz-lts root=/dev/loop0 rw
+      initrd (loop)/boot/initramfs-lts.img
       boot
     }
   '';
