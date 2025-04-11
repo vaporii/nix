@@ -30,6 +30,7 @@
   boot.loader.grub.extraEntries = ''
     menuentry "asciiquarium" {
       insmod lvm
+      insmod ext2
       set root=(lvm/root_vg-root)
 
       loopback loop /persist/home/Persist/projects/os/asciiquarium-os/asciiquarium.img
