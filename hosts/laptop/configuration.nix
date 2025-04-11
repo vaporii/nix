@@ -30,7 +30,7 @@
   boot.loader.grub.extraEntries = ''
     menuentry "asciiquarium" {
       insmod lvm
-      insmod btrfs
+      insmod ext4
       set root=(lvm/root_vg/root)
       search --no-floppy --set=root --file /persist/home/Persist/projects/os/asciiquarium-os/asciiquarium.img
       loopback loop /persist/home/Persist/projects/os/asciiquarium-os/asciiquarium.img
