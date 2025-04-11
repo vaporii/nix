@@ -30,10 +30,11 @@
   boot.loader.grub.extraEntries = ''
     menuentry "asciiquarium" {
       insmod lvm
+      insmod btrfs
 
       loopback loop (lvm/root_vg-root)/persist/home/Persist/projects/os/asciiquarium-os/temp-asciiquarium.img
 
-      linux (loop)/boot/vmlinuz-lts root=/dev/sda1 loop=/persist/home/Persist/projects/os/asciiquarium-os/temp-asciiquarium.img
+      linux (loop)/boot/vmlinuz-lts img_loop=/persist/home/Persist/projects/os/asciiquarium-os/temp-asciiquarium.img toram
       initrd (loop)/boot/initramfs-lts
       boot
     }
