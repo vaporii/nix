@@ -18,6 +18,9 @@
             expr = "import <nixpkgs> { }";
           };
           options = rec {
+            # nixos.expr = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.laptop.options";
+            # home-manager.expr = "${nixos.expr}.home-manager.users.type.getSubOptions [ ]";
+            # nixvim.expr = "${nixos.expr}.nixvim";
             nixos.expr = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.laptop.options";
             home-manager.expr = "${nixos.expr}.home-manager.users.type.getSubOptions [ ]";
           };

@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
+    inputs.nixvim.homeManagerModules.default
     ../../home
   ];
 
@@ -31,7 +32,7 @@
     fastfetch.enable = true;
     bash.enable = true;
     starship.enable = true;
-    vim.enable = true;
+    nixvim.enable = true;
   };
 
   services = {

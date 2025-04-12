@@ -1,23 +1,44 @@
 { pkgs, ... }:
 
 {
-  programs.vim = {
-    plugins = with pkgs.vimPlugins; [
-      coc-nvim
-      gruvbox-nvim
-      vim-nix
-      auto-pairs
-    ];
-    extraConfig = ''
-      set autoindent
-      set smartindent
-      set tabstop=2
-      set shiftwidth=2
-      set expandtab
-      set backspace=indent,eol,start
-      syntax on
-      set number
-      set relativenumber
-    '';
+  programs.nixvim = {
+    options = {
+      autoindent = true;
+      smartindent = true;
+      expandtab = true;
+
+      tabstop = 2;
+      shiftwidth = 2;
+
+      backspace = "indent,eol,start";
+      number = true;
+      relativenumber = true;
+    };
+    
+    colorschemes.gruvbox.enable = true;
+
+    plugins = {
+      lightline.enable = true;
+      treesitter.enable = true;
+      auto-pairs.enable = true;
+      oil.enable = true;
+      telescope.enable = true;
+      
+      lsp = {
+        enable = true;
+        servers = {
+          nixd.enable = true;
+        };
+      };
+      nvim-cmp = {
+        enable = true;
+        autoEnableSources = true;
+        sources = [
+          { name = "nvim_lsp"; }
+          { name = "path"; }
+          { name = "buffer"; }
+        ];
+      };
+    };
   };
 }
