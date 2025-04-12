@@ -144,24 +144,24 @@
   environment.variables.XCURSOR_SIZE = "20";
 
   environment.systemPackages = with pkgs; [
-    ((vim_configurable.override { }).customize{
-      name = "vim";
-      vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
-        start = [ vim-nix auto-pairs ];
-        opt = [];
-      };
-      vimrcConfig.customRC = ''
-        set autoindent
-        set smartindent
-        set tabstop=2
-        set shiftwidth=2
-        set expandtab
-        set backspace=indent,eol,start
-        syntax on
-        set number
-        set relativenumber
-      '';
-    })
+    # ((vim_configurable.override { }).customize{
+    #   name = "vim";
+    #   vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
+    #     start = [ vim-nix auto-pairs ];
+    #     opt = [];
+    #   };
+    #   vimrcConfig.customRC = ''
+    #     set autoindent
+    #     set smartindent
+    #     set tabstop=2
+    #     set shiftwidth=2
+    #     set expandtab
+    #     set backspace=indent,eol,start
+    #     syntax on
+    #     set number
+    #     set relativenumber
+    #   '';
+    # })
     wget
     git
     kitty
