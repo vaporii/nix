@@ -31,7 +31,6 @@
     fastfetch.enable = true;
     bash.enable = true;
     starship.enable = true;
-    virt-manager.enable = true;
   };
 
   services = {
