@@ -113,7 +113,7 @@
 
   users.users.vaporii = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "libvirtd" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
       hyfetch
@@ -123,11 +123,13 @@
       equibop
       discordchatexporter-cli
       eclipses.eclipse-java
-      qemu_full
-      virt-manager
+      qemu_kvm
     ];
     hashedPassword = "$y$j9T$h14SkfRLxr/uUwoJbEb35.$l9k5T4/xHp4h1V95l/OdaYjC8Sb4AFXpvkPaqYJKE97";
   };
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   programs.fuse.userAllowOther = true;
   home-manager = {
