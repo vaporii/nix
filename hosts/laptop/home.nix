@@ -31,6 +31,7 @@
     fastfetch.enable = true;
     bash.enable = true;
     starship.enable = true;
+    vim.enable = true;
   };
 
   services = {
