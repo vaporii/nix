@@ -30,11 +30,13 @@
   boot.loader.grub.extraEntries = ''
     menuentry "asciiquarium" {
       insmod lvm
+      insmod ext2
       insmod btrfs
 
+      set root=(lvm/root_vg-root)
       loopback loop (lvm/root_vg-root)/persist/home/Persist/projects/os/asciiquarium-os/temp-asciiquarium.img
 
-      linux (loop)/boot/vmlinuz-lts img_loop=/persist/home/Persist/projects/os/asciiquarium-os/temp-asciiquarium.img toram
+      linux (loop)/boot/vmlinuz-lts root=/dev/mapper/root_vg-root
       initrd (loop)/boot/initramfs-lts
       boot
     }
@@ -121,6 +123,7 @@
       equibop
       discordchatexporter-cli
       eclipses.eclipse-java
+      qemu
     ];
     hashedPassword = "$y$j9T$h14SkfRLxr/uUwoJbEb35.$l9k5T4/xHp4h1V95l/OdaYjC8Sb4AFXpvkPaqYJKE97";
   };
