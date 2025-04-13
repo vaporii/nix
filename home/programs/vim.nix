@@ -39,7 +39,16 @@
       neo-tree = {
         enable = true;
         popupBorderStyle = "NC"; # double, none, rounded, shadow, single, solid
-        filesystem.hijackNetrwBehavior = "open_current";
+        filesystem = {
+          hijackNetrwBehavior = "open_current";
+          findArgs = {
+            fd = [
+              "--hidden"
+              "--exclude"
+              ".git"
+            ];
+          };
+        };
       };
 
       indent-blankline = {
