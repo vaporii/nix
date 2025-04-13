@@ -19,7 +19,6 @@
 
     keymaps = [
       {
-        mode = "n";
         key = "<C-B>";
         options.silent = true;
         action = "<cmd>Neotree toggle<CR>";
@@ -31,10 +30,20 @@
       treesitter.enable = true;
       nvim-autopairs.enable = true;
       telescope.enable = true;
-      cmp.enable = true;
       web-devicons.enable = true;
       smear-cursor.enable = true;
       gitsigns.enable = true;
+
+      cmp = {
+        enable = true;
+        autoEnableSources = true;
+        settings.sources = [
+          { name = "nvim_lsp"; }
+          { name = "path"; }
+          { name = "buffer"; }
+        ];
+        settings.window.completion.border = [ "┌" "─" "┐" "│" "┘" "─" "└" "│" ];
+      };
 
       neo-tree = {
         enable = true;
@@ -110,6 +119,41 @@
               }
               {
                 action = {
+                  __raw = ''
+                    function(path)
+                      path = path or vim.fn.getcwd()
+                      vim.cmd("Neotree " .. path)
+                    end
+                  '';
+                  # __raw = ''
+                  #   function(path)
+                  #     require("telescope.builtin").find_files({
+                  #       prompt_title = "select directory",
+                  #       find_command = { "${pkgs.fd}/bin/fd", "--type", "d" },
+                  #       attach_mappings = function (_, map)
+                  #         local actions = require("telescope.actions")
+                  #         local action_state = require("telescope.actions.state")
+
+                  #         map("i", "<CR>", function()
+                  #           local entry = action_state.get_selected_entry()
+                  #           actions.close()
+                  #           if entry and entry.value then
+                  #             vim.cmd("Neotree " .. entry.value)
+                  #           end
+                  #         end)
+                  #         return true
+                  #       end,
+                  #     })
+                  #   end
+                  # '';
+                };
+                desc = "open project";
+                group = "DiagnosticHint";
+                icon = "󰉋 ";
+                key = "p";
+              }
+              {
+                action = {
                   __raw = "function(path) vim.cmd('Telescope find_files') end";
                 };
                 desc = "search files";
@@ -119,7 +163,7 @@
               }
               {
                 action = {
-                  __raw = "function(path) vim.cmd(':Telescope find_files search_dirs=/etc/nixos') end";
+                  __raw = "function(path) vim.cmd(':Neotree /etc/nixos') end";
                 };
                 desc = "nixos";
                 group = "DiagnosticHint";
