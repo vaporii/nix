@@ -41,7 +41,7 @@
     in{
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs; inherit system; };
 
           modules = [
             inputs.disko.nixosModules.default

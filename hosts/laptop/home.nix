@@ -3,7 +3,7 @@
 {
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
-    inputs.nixvim.homeManagerModules.default
+    inputs.nixvim.homeManagerModules.nixvim
     ../../home
   ];
 

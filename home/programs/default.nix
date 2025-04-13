@@ -13,5 +13,6 @@
     ./fastfetch.nix
     ./bash.nix
     ./starship.nix
+    ./vim.nix
   ];
 }

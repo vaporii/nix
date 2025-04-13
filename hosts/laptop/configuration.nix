@@ -1,4 +1,4 @@
-{ pkgs, inputs, lib, ... }:
+{ pkgs, inputs, lib, system, ... }:
 
 {
   imports =
@@ -133,7 +133,7 @@
 
   programs.fuse.userAllowOther = true;
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs; inherit system; };
 
     users.vaporii = import ./home.nix;
 
