@@ -22,7 +22,7 @@
         mode = "n";
         key = "<C-B>";
         options.silent = true;
-        action = "<cmd>NvimTreeToggle<CR>";
+        action = "<cmd>Neotree toggle<CR>";
       }
     ];
 
@@ -36,15 +36,10 @@
       smear-cursor.enable = true;
       gitsigns.enable = true;
 
-      nvim-tree = {
+      neo-tree = {
         enable = true;
-        updateFocusedFile = {
-          enable = true;
-          updateRoot = true;
-        };
-        rootDirs = [
-          "/etc/nixos"
-        ];
+        popupBorderStyle = "NC"; # double, none, rounded, shadow, single, solid
+        filesystem.hijackNetrwBehavior = "open_current";
       };
 
       indent-blankline = {
