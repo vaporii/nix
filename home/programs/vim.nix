@@ -13,7 +13,6 @@
   };
 
   config = lib.mkIf config.vim.enable {
-    programs.nixvim.enable = true;
     programs.nixvim.config = {
       colorschemes.gruvbox.enable = true;
 

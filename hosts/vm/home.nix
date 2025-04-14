@@ -36,10 +36,10 @@
   };
 
   vim.enable = true;
-  vim.nixHost = "laptop";
+  vim.nixHost = "vm";
 
   vscode.enable = true;
-  vscode.nixHost = "laptop";
+  vscode.nixHost = "vm";
 
   services = {
     hyprpaper.enable = true;

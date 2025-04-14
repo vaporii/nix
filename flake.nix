@@ -45,9 +45,19 @@
 
           modules = [
             inputs.disko.nixosModules.default
-            (import ./hosts/laptop/disko.nix { device = "/dev/nvme0n1"; })
 
             ./hosts/laptop/configuration.nix
+            inputs.home-manager.nixosModules.default
+            impermanence.nixosModules.impermanence
+          ];
+        };
+        vm = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; inherit system; };
+
+          modules = [
+            inputs.disko.nixosModules.default
+
+            ./hosts/vm/configuration.nix
             inputs.home-manager.nixosModules.default
             impermanence.nixosModules.impermanence
           ];
