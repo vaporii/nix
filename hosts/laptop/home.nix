@@ -3,7 +3,6 @@
 {
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
-    inputs.nixvim.homeManagerModules.nixvim
     ../../home
   ];
 
@@ -26,13 +25,11 @@
     kitty.enable = true;
     waybar.enable = true;
     ags.enable = true;
-    # vscode.enable = true;
     firefox.enable = true;
     rofi.enable = true;
     fastfetch.enable = true;
     bash.enable = true;
     starship.enable = true;
-    nixvim.enable = true;
   };
 
   vim.enable = true;
@@ -44,7 +41,6 @@
   services = {
     hyprpaper.enable = true;
     flameshot.enable = true;
-
   };
 
   wayland.windowManager.hyprland = {

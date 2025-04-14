@@ -60,6 +60,7 @@
             ./hosts/vm/configuration.nix
             inputs.home-manager.nixosModules.default
             impermanence.nixosModules.impermanence
+            
           ];
         };
       };
