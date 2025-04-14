@@ -26,14 +26,15 @@
     kitty.enable = true;
     waybar.enable = true;
     ags.enable = true;
-    # vscode.enable = true;
     firefox.enable = true;
     rofi.enable = true;
     fastfetch.enable = true;
     bash.enable = true;
     starship.enable = true;
-    nixvim.enable = true;
   };
+
+  vim.enable = true;
+  vim.nixHost = "laptop";
 
   vscode.enable = true;
   vscode.nixHost = "laptop";
