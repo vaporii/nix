@@ -20,17 +20,14 @@
     allowOther = true;
   };
 
-  programs = {
-    git.enable = true;
-    kitty.enable = true;
-    waybar.enable = true;
-    ags.enable = true;
-    firefox.enable = true;
-    rofi.enable = true;
-    fastfetch.enable = true;
-    bash.enable = true;
-    starship.enable = true;
-  };
+  bash.enable = true;
+  fastfetch.enable = true;
+  firefox.enable = true;
+  git.enable = true;
+  kitty.enable = true;
+  rofi.enable = true;
+  starship.enable = true;
+  waybar.enable = true;
 
   vim.enable = true;
   vim.nixHost = "laptop";

@@ -186,7 +186,7 @@
                 in {
                   nixpkgs.expr = "import ${flake}.inputs.nixpkgs { }";
                   options = rec {
-                    nixos.expr = "${flake}.nixosConfigurations.laptop.options";
+                    nixos.expr = "${flake}.nixosConfigurations.${config.vim.nixHost}.options";
                     home-manager.expr = "${nixos.expr}.home-manager.users.type.getSubOptions [ ]";
                     nixvim.expr = "${flake}.packages.${system}.nvim.options";
                   };
