@@ -26,7 +26,7 @@
     kitty.enable = true;
     waybar.enable = true;
     ags.enable = true;
-    vscode.enable = true;
+    # vscode.enable = true;
     firefox.enable = true;
     rofi.enable = true;
     fastfetch.enable = true;
@@ -34,6 +34,9 @@
     starship.enable = true;
     nixvim.enable = true;
   };
+
+  vscode.enable = true;
+  vscode.nixHost = "laptop";
 
   services = {
     hyprpaper.enable = true;
