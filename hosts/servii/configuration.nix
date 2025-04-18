@@ -64,8 +64,6 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  services.libinput.enable = true;
-
   users.users.admin = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
