@@ -89,6 +89,9 @@
     git
   ];
 
+  services.openssh.enable = true;
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
+
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   system.stateVersion = "24.11"; # Did you read the comment?
