@@ -1,24 +1,28 @@
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
 
 { 
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 20;
-  };
+  options.theme.enable = lib.mkEnableOption "visual theming";
 
-  gtk = {
-    enable = true;
-
-    iconTheme = {
-      package = pkgs.gruvbox-plus-icons;
-      name = "Gruvbox Dark";
+  config = lib.mkIf config.theme.enable {
+    home.pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 20;
     };
 
-    theme = {
-      package = pkgs.gruvbox-material-gtk-theme;
-      name = "Gruvbox-Material-Dark";
+    gtk = {
+      enable = true;
+
+      iconTheme = {
+        package = pkgs.gruvbox-plus-icons;
+        name = "Gruvbox Dark";
+      };
+
+      theme = {
+        package = pkgs.gruvbox-material-gtk-theme;
+        name = "Gruvbox-Material-Dark";
+      };
     };
   };
 }

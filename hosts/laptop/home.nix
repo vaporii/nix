@@ -23,6 +23,8 @@
 
   programs.v8p.enable = true;
 
+  theme.enable = true;
+
   bash.enable = true;
   fastfetch.enable = true;
   firefox.enable = true;
