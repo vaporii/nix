@@ -3,7 +3,7 @@
 {
   imports =
     [
-      (import ./disko.nix { device = "/dev/vda"; })
+      (import ./disko.nix { device = "/dev/sda"; })
       ./hardware-configuration.nix
     ];
   
@@ -52,7 +52,7 @@
     umount /btrfs_tmp
   '';
 
-  networking.hostName = "vm"; # Define your hostname.
+  networking.hostName = "servii"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   time.timeZone = "America/Chicago";
@@ -64,106 +64,35 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  services.greetd = {
-    enable = true;
-    restart = false;
-    settings = rec {
-      initial_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu -t";
-        # command = "${pkgs.hyprland}/bin/Hyprland";
-        user = "vaporii";
-      };
-      default_session = initial_session;
-    };
-  };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  services.xserver.xkb.layout = "us";
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
   services.libinput.enable = true;
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "discord"
-    ];
-
-  users.users.vaporii = {
+  users.users.admin = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
       hyfetch
-      blender
       unzip
-      gimp
-      equibop
-      discordchatexporter-cli
-      eclipses.eclipse-java
-      qemu_kvm
     ];
     hashedPassword = "$y$j9T$h14SkfRLxr/uUwoJbEb35.$l9k5T4/xHp4h1V95l/OdaYjC8Sb4AFXpvkPaqYJKE97";
   };
-
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
 
   programs.fuse.userAllowOther = true;
   home-manager = {
     extraSpecialArgs = { inherit inputs; inherit system; };
 
-    users.vaporii = import ./home.nix;
+    users.admin = import ./home.nix;
 
-    backupFileExtension = "backup1";
+    backupFileExtension = "backup";
   };
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.variables.XCURSOR_SIZE = "20";
-
   environment.systemPackages = with pkgs; [
-    # ((vim_configurable.override { }).customize{
-    #   name = "vim";
-    #   vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
-    #     start = [ vim-nix auto-pairs ];
-    #     opt = [];
-    #   };
-    #   vimrcConfig.customRC = ''
-    #     set autoindent
-    #     set smartindent
-    #     set tabstop=2
-    #     set shiftwidth=2
-    #     set expandtab
-    #     set backspace=indent,eol,start
-    #     syntax on
-    #     set number
-    #     set relativenumber
-    #   '';
-    # })
     wget
     git
-    kitty
-    ags
-    grim
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
-  fonts.packages = with pkgs; [
-    twitter-color-emoji
-    nerd-fonts.caskaydia-mono
-    noto-fonts
-    noto-fonts-cjk-sans
-  ];
-
   system.stateVersion = "24.11"; # Did you read the comment?
 }
-
 

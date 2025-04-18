@@ -56,13 +56,13 @@
             impermanence.nixosModules.impermanence
           ];
         };
-        vm = nixpkgs.lib.nixosSystem {
+        servii = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; inherit system; };
 
           modules = [
             inputs.disko.nixosModules.default
 
-            ./hosts/vm/configuration.nix
+            ./hosts/servii/configuration.nix
             inputs.home-manager.nixosModules.default
             impermanence.nixosModules.impermanence
             
