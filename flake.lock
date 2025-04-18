@@ -346,11 +346,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1744937354,
-        "narHash": "sha256-P0W3BlXeC0WMz953Kn1uL3sWMmpADw7yGAgQxGyGmYg=",
+        "lastModified": 1744937489,
+        "narHash": "sha256-be3tRH04N4KiZAdvHTTG9s1nzx0/DEMiwjuH3viYYf0=",
         "owner": "vaporii",
         "repo": "v8p.me-cli",
-        "rev": "2b106666f2b8af118bbc79eec348bacd3bfe3c1b",
+        "rev": "364c962245efbc8f7468f28f20a9c92a8d87bc52",
         "type": "github"
       },
       "original": {
