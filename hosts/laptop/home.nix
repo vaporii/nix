@@ -2,7 +2,7 @@
 
 {
   imports = [
-    inputs.v8p.nixosModules.v8p
+    inputs.v8p.homeManagerModules.v8p
     inputs.impermanence.nixosModules.home-manager.impermanence
     ../../home
   ];
@@ -20,6 +20,8 @@
     ];
     allowOther = true;
   };
+
+  programs.v8p.enable = true;
 
   bash.enable = true;
   fastfetch.enable = true;
