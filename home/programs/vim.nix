@@ -1,4 +1,4 @@
-{ inputs, system, lib, config, ... }:
+{ inputs, system, lib, config, pkgs, ... }:
 
 {
   imports = [
@@ -12,6 +12,12 @@
         type = with lib.types; uniq str;
         example = "laptop";
         description = "the nixos configuration host to use for nixd";
+      };
+      pythonPackage = lib.mkOption {
+        type = lib.types.package;
+        example = "pkgs.python3";
+        default = pkgs.python3;
+        description = "the python package to use";
       };
     };
   };
@@ -41,6 +47,40 @@
             options.silent = true;
             action = "<cmd>Neotree toggle<CR>";
           }
+          {
+            key = "<A-Tab>";
+            options.noremap = true;
+            options.silent = true;
+            action = "<cmd>tabnext<CR>";
+          }
+          {
+            key = "<A-S-Tab>";
+            options.noremap = true;
+            options.silent = true;
+            action = "<cmd>tabprevious<CR>";
+          }
+          {
+            key = "<C-W>";
+            options.silent = true;
+            options.noremap = true;
+            action = "<cmd>tabclose<CR>";
+          }
+          {
+            key = "<C-H>";
+            action = "<cmd>wincmd h<CR>";
+          }
+          {
+            key = "<C-L>";
+            action = "<cmd>wincmd l<CR>";
+          }
+          {
+            key = "<C-J>";
+            action = "<cmd>wincmd j<CR>";
+          }
+          {
+            key = "<C-K>";
+            action = "<cmd>wincmd k<CR>";
+          }
         ];
 
         plugins = {
@@ -52,13 +92,33 @@
           smear-cursor.enable = true;
           gitsigns.enable = true;
 
+          toggleterm = {
+            enable = true;
+            settings.open_mapping = "[[<C-`>]]";
+          };
+
+          lspkind = {
+            enable = true;
+            cmp.enable = true;
+          };
+
           cmp = {
             enable = true;
             autoEnableSources = true;
+            settings.mapping.__raw = /* lua */ ''
+              cmp.mapping.preset.insert({
+                ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+                ["<C-CR>"] = cmp.mapping.confirm({ select = true }),
+                ["<CR>"] = cmp.mapping.confirm(),
+                ["C-Space>"] = cmp.mapping.complete(),
+              })
+            '';
             settings.sources = [
               { name = "nvim_lsp"; }
               { name = "path"; }
               { name = "buffer"; }
+              { name = "luasnip"; }
+              { name = "treesitter"; }
             ];
             settings.window.completion.border = [ "┌" "─" "┐" "│" "┘" "─" "└" "│" ];
           };
@@ -178,17 +238,21 @@
           lsp = {
             enable = true;
             servers = {
+              pylsp.enable = true;
+              pylsp.pythonPackage = config.vim.pythonPackage;
+              zls.enable = true;
               nixd = {
                 enable = true;
                 settings =
                 let
-                  flake = "(builtins.getFlake \"${inputs.self}\")";
+                  flake = ''(builtins.getFlake "/etc/nixos")'';
+                  system = ''''${builtins.currentSystem}'';
                 in {
                   nixpkgs.expr = "import ${flake}.inputs.nixpkgs { }";
                   options = rec {
                     nixos.expr = "${flake}.nixosConfigurations.${config.vim.nixHost}.options";
                     home-manager.expr = "${nixos.expr}.home-manager.users.type.getSubOptions [ ]";
-                    nixvim.expr = "${flake}.packages.${system}.nvim.options";
+                    nixvim.expr = "${flake}.inputs.nixvim.nixvimConfigurations.${system}.default.options";
                   };
                 };
               };

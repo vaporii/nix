@@ -2,6 +2,7 @@
 
 {
   imports = [
+    inputs.v8p.nixosModules.v8p
     inputs.impermanence.nixosModules.home-manager.impermanence
     ../../home
   ];

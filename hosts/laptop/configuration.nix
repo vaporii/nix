@@ -104,6 +104,23 @@
     pulse.enable = true;
   };
 
+  systemd.services."rsync" = {
+    enable = true;
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+    script = /* bash */ ''
+      while ${pkgs.inotify-tools}/bin/inotifywait -r ~/Persist; do
+        ${pkgs.rsync}/bin/rsync -avz --protocol=31 --delete -e "${pkgs.openssh}/bin/ssh -i /home/vaporii/.ssh/v8p_ed25519" /home/vaporii/Persist vaporii@vaporii.net:~/back || exit 1
+      done
+    '';
+    serviceConfig = {
+      Type = "simple";
+      Restart = "on-failure";
+      RestartSec = 5;
+      User = "vaporii";
+    };
+  };
+
   services.libinput.enable = true;
 
   nixpkgs.config.allowUnfreePredicate = pkg:
@@ -113,7 +130,7 @@
 
   users.users.vaporii = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "libvirtd" "input" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
       hyfetch

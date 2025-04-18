@@ -301,7 +301,8 @@
         "impermanence": "impermanence",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
-        "textfox": "textfox"
+        "textfox": "textfox",
+        "v8p": "v8p"
       }
     },
     "systems": {
@@ -335,6 +336,26 @@
       "original": {
         "owner": "adriankarlen",
         "repo": "textfox",
+        "type": "github"
+      }
+    },
+    "v8p": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1744936854,
+        "narHash": "sha256-jrZx6Pc7GJ6zTIQNTxJd/2TSOwlQmhXubQDPLFHhpnQ=",
+        "owner": "vaporii",
+        "repo": "v8p.me-cli",
+        "rev": "762050995816cb3dbc2b1a5f034d88ef2d6f5976",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vaporii",
+        "repo": "v8p.me-cli",
         "type": "github"
       }
     }

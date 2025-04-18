@@ -29,6 +29,11 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    v8p = {
+      url = "github:vaporii/v8p.me-cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, impermanence, ... }@inputs:
