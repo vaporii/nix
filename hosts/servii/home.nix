@@ -22,4 +22,6 @@
 
   vim.enable = true;
   vim.nixHost = "servii";
+
+  home.stateVersion = "24.11";
 }
