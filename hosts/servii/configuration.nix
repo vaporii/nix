@@ -15,6 +15,7 @@
       "/var/log"
       "/var/lib/nixos"
       "/etc/NetworkManager/system-connections"
+      "/home/admin/.ssh"
     ];
     files = [
       "/etc/machine-id"
