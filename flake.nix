@@ -45,13 +45,9 @@
     };
   };
 
-  outputs = { self, nixpkgs, serverpkgs, impermanence, ... }@inputs:
+  outputs = { nixpkgs, serverpkgs, impermanence, ... }@inputs:
     let
       system = "x86_64-linux";
-
-      pkgs = import nixpkgs {
-        inherit system;
-      };
     in{
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
