@@ -43,12 +43,7 @@
   hyprpaper.enable = true;
   flameshot.enable = true;
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-
-    package = null;
-    portalPackage = null;
-  };
+  hyprland.enable = true;
 
   home.stateVersion = "24.11";
 }
