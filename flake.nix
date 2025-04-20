@@ -9,13 +9,21 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    serverdisko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "serverpkgs";
+    };
     
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ags.url = "github:aylur/ags";
+    server-home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "serverpkgs";
+    };
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -25,6 +33,11 @@
     textfox.url = "github:adriankarlen/textfox";
 
     impermanence.url = "github:nix-community/impermanence";
+
+    serverimpermanence = {
+      url = "github:nix-community/impermanence";
+      inputs.nixpkgs.follows = "serverpkgs";
+    };
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -61,11 +74,11 @@
           specialArgs = { inherit inputs; inherit system; };
 
           modules = [
-            inputs.disko.nixosModules.default
+            inputs.serverdisko.nixosModules.default
 
             ./hosts/servii/configuration.nix
-            inputs.home-manager.nixosModules.default
-            impermanence.nixosModules.impermanence
+            inputs.server-home-manager.nixosModules.default
+            inputs.serverimpermanence.nixosModules.impermanence
             
           ];
         };
