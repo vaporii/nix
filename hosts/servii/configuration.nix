@@ -99,7 +99,6 @@
     wget
     git
     podman-compose
-    dive
     podman-tui
   ];
 
