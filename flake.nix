@@ -21,7 +21,7 @@
     };
 
     server-home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager?ref=release-24.11";
       inputs.nixpkgs.follows = "serverpkgs";
     };
 
