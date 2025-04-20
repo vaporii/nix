@@ -34,11 +34,6 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
-    serverimpermanence = {
-      url = "github:nix-community/impermanence";
-      inputs.nixpkgs.follows = "serverpkgs";
-    };
-
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -78,8 +73,7 @@
 
             ./hosts/servii/configuration.nix
             inputs.server-home-manager.nixosModules.default
-            inputs.serverimpermanence.nixosModules.impermanence
-            
+            impermanence.nixosModules.impermanence
           ];
         };
       };
