@@ -1,9 +1,9 @@
 { pkgs, lib, config, ... }:
 
 {
-  options.wayland.enable = lib.mkEnableOption "hyprland";
+  options.hyprland.enable = lib.mkEnableOption "hyprland";
 
-  config = lib.mkIf config.wayland.enable {
+  config = lib.mkIf config.hyprland.enable {
     wayland.windowManager.hyprland = {
       enable = true;
 
