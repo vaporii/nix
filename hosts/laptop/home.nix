@@ -40,10 +40,8 @@
   vscode.enable = true;
   vscode.nixHost = "laptop";
 
-  services = {
-    hyprpaper.enable = true;
-    flameshot.enable = true;
-  };
+  hyprpaper.enable = true;
+  flameshot.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
