@@ -63,7 +63,6 @@
             inputs.serverdisko.nixosModules.default
 
             ./hosts/servii/configuration.nix
-            inputs.server-home-manager.nixosModules.default
             impermanence.nixosModules.impermanence
           ];
         };
