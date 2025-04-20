@@ -86,15 +86,6 @@
     };
   };
 
-  programs.fuse.userAllowOther = true;
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; inherit system; };
-
-    users.admin = import ./home.nix;
-
-    backupFileExtension = "backup";
-  };
-
   environment.systemPackages = with pkgs; [
     wget
     git
