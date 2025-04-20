@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    serverpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
 
     disko = {
       url = "github:nix-community/disko";
@@ -36,7 +37,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, impermanence, ... }@inputs:
+  outputs = { self, nixpkgs, serverpkgs, impermanence, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -56,7 +57,7 @@
             impermanence.nixosModules.impermanence
           ];
         };
-        servii = nixpkgs.lib.nixosSystem {
+        servii = serverpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; inherit system; };
 
           modules = [
