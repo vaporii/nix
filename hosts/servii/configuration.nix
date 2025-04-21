@@ -83,7 +83,12 @@
     backupFileExtension = "backup";
   };
 
-  podman.enable = true;
+  podman = {
+    enable = true;
+    services = {
+      traefik.enable = true;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     wget
