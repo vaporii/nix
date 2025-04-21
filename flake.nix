@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    server-home-manager = {
+      url = "github:nix-community/home-manager?ref=release-24.11";
+      inputs.nixpkgs.follows = "serverpkgs";
+    };
+
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -63,6 +68,7 @@
             inputs.serverdisko.nixosModules.default
 
             ./hosts/servii/configuration.nix
+            inputs.server-home-manager.nixosModules.default
             impermanence.nixosModules.impermanence
           ];
         };
