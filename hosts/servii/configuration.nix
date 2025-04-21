@@ -5,6 +5,7 @@
     [
       (import ./disko.nix { device = "/dev/sda"; })
       ./hardware-configuration.nix
+      ../../podman
     ];
   
   fileSystems."/persist".neededForBoot = true;
@@ -80,17 +81,6 @@
     extraSpecialArgs = { inherit inputs system; };
     users.admin = import ./home.nix;
     backupFileExtension = "backup";
-  };
-
-  virtualisation.containers.enable = true;
-  virtualisation = {
-    podman = {
-      enable = true;
-
-      dockerCompat = true;
-
-      defaultNetwork.settings.dns_enabled = true;
-    };
   };
 
   environment.systemPackages = with pkgs; [
