@@ -22,7 +22,7 @@ in {
       image = "traefik";
       volumes = [
         "/var/run/podman/podman.sock:/var/run/docker.sock:ro"
-        "${config.traefik.storage}:/traefikconfig:rw"
+        "${cfg.storage}:/traefikconfig:rw"
       ];
       ports = [
         "80:80/tcp"
