@@ -3,7 +3,7 @@
 {
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
-    ../../home
+    # ../../home
   ];
 
   home.persistence."/persist/home" = {
@@ -14,13 +14,8 @@
     files = [
       ".bash_history"
     ];
+    allowOther = true;
   };
-
-  bash.enable = true;
-  git.enable = true;
-
-  vim.enable = true;
-  vim.nixHost = "servii";
 
   home.stateVersion = "24.11";
 }
