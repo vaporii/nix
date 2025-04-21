@@ -60,12 +60,6 @@
             action = "<cmd>tabprevious<CR>";
           }
           {
-            key = "<C-W>";
-            options.silent = true;
-            options.noremap = true;
-            action = "<cmd>tabclose<CR>";
-          }
-          {
             key = "<C-H>";
             action = "<cmd>wincmd h<CR>";
           }
