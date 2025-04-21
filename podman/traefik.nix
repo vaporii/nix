@@ -1,7 +1,7 @@
 { lib, config, ... }: let
   cfg = config.services.traefik;
 in {
-  cfg = {
+  options.services.traefik = {
     enable = lib.mkEnableOption "traefik";
     storage = lib.mkOption {
       type = lib.types.oneOf [ lib.types.path lib.types.str ];
