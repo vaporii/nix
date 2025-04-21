@@ -3,7 +3,6 @@
 {
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
-    # ../../home
   ];
 
   home.persistence."/persist/home" = {
