@@ -83,6 +83,8 @@
     backupFileExtension = "backup";
   };
 
+  podman.enable = true;
+
   environment.systemPackages = with pkgs; [
     wget
     git
