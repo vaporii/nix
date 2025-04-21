@@ -1,5 +1,7 @@
-{ lib, config, ... }: {
-  options.traefik = {
+{ lib, config, ... }: let
+  cfg = config.services.traefik;
+in {
+  cfg = {
     enable = lib.mkEnableOption "traefik";
     storage = lib.mkOption {
       type = lib.types.oneOf [ lib.types.path lib.types.str ];
@@ -15,7 +17,7 @@
     };
   };
 
-  config = lib.mkIf config.traefik.enable {
+  config = lib.mkIf cfg.enable {
     virtualisation.oci-containers.containers.traefik = {
       image = "traefik";
       volumes = [
@@ -40,7 +42,7 @@
         "certificatesresolvers.myresolver.acme.tlschallenge" = "true";
         "providers.file.directory" = "/traefikconfig/config";
         "providers.file.watch" = "true";
-        "certificatesresolvers.myresolver.acme.email" = config.traefik.acme.email;
+        "certificatesresolvers.myresolver.acme.email" = cfg.acme.email;
         "certificatesresolvers.myresolver.acme.storage" = "/traefikconfig/le/acme.json";
       };
     };
