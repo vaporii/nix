@@ -370,11 +370,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745347294,
-        "narHash": "sha256-CLJk9CxvMpP2G6z0tnJDCx2OGQ5labwEDRI2sQTyFzU=",
+        "lastModified": 1745348018,
+        "narHash": "sha256-XgGppgDVPNQl4B94wYyCNQQ4aIQH7kAOTvcMlM71LG8=",
         "owner": "vaporii",
         "repo": "v8p.me",
-        "rev": "2a2cd1550565e0465520666753dc14f90ef06881",
+        "rev": "c0600ca7913bd1a9bf2d6b89003c622110a47afe",
         "type": "github"
       },
       "original": {
