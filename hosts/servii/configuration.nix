@@ -87,6 +87,7 @@
     enable = true;
     services = {
       traefik.enable = true;
+      dashdot.enable = true;
     };
   };
 
