@@ -20,7 +20,7 @@ in {
       imageFile = inputs."v8p.me".packages.x86_64-linux.default;
       image = "v8p.me";
       volumes = [
-        # "${cfg.storage}:"
+        "${cfg.storage}:/var/lib/v8p.me"
       ];
       labels = {
         "traefik.enable" = if cfg.https then "true" else "false";
@@ -34,6 +34,14 @@ in {
       dependsOn = [
         "traefik"
       ];
+      environment = {
+        "DB_PATH" = "/var/lib/v8p.me/files.db";
+        "FILES_DIR" = "/var/lib/v8p.me/files";
+        "ALIAS_LENGTH" = "6";
+        "BODY_SIZE_LIMIT" = "10G";
+        "PORT" = "3000";
+        "ORIGIN" = "https://v8p.me";
+      };
     };
   };
 }
