@@ -88,6 +88,7 @@
     services = {
       traefik.enable = true;
       dashdot.enable = true;
+      dashdot.https = true; 
     };
   };
 

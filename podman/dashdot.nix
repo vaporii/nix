@@ -3,6 +3,11 @@
 in {
   options.podman.services.dashdot = {
     enable = lib.mkEnableOption "dashdot";
+    https = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "whether to enable https with traefik";
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -12,7 +17,7 @@ in {
         "/:/mnt/host:ro"
       ];
       labels = {
-        "traefik.enable" = "true";
+        "traefik.enable" = if cfg.https then "true" else "false";
         "traefik.http.routers.dashdot.rule" = "Host(`dashdot.vaporii.net`)";
         "traefik.http.routers.dashdot.entrypoints" = "websecure";
         "traefik.http.routers.dashdot.tls.certresolver" = "myresolver";
