@@ -3,7 +3,7 @@
 {
   imports = [
     ./traefik.nix
-    # ./dashdot.nix
+    ./dashdot.nix
   ];
 
   options.podman.enable = lib.mkEnableOption "podman";

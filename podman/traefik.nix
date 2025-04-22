@@ -45,6 +45,9 @@ in {
         "certificatesresolvers.myresolver.acme.email" = cfg.acme.email;
         "certificatesresolvers.myresolver.acme.storage" = "/traefikconfig/le/acme.json";
       };
+      networks = [
+        "traefik_network"
+      ];
     };
   };
 }

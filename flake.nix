@@ -43,6 +43,11 @@
       url = "github:vaporii/v8p.me-cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    "v8p.me" = {
+      url = "github:vaporii/v8p.me";
+      inputs.nixpkgs.follows = "serverpkgs";
+    };
   };
 
   outputs = { nixpkgs, serverpkgs, impermanence, ... }@inputs:
