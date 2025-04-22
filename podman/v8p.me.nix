@@ -18,6 +18,7 @@ in {
   config = lib.mkIf cfg.enable {
     virtualisation.oci-containers.containers."v8p.me" = {
       imageFile = "${inputs."v8p.me".packages.x86_64-linux.default}";
+      image = "v8p.me";
       volumes = [
         # "${cfg.storage}:"
       ];
