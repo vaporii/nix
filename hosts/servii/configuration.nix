@@ -90,8 +90,8 @@
       traefik.enable = true;
       dashdot.enable = true;
       dashdot.https = false; 
-      v8p.enable = true;
-      v8p.https = false;
+      "v8p.me".enable = true;
+      "v8p.me".https = false;
     };
   };
 
