@@ -22,8 +22,8 @@ in {
         "traefik.http.routers.v8p.entrypoints" = "websecure";
         "traefik.http.routers.v8p.tls.certresolver" = "myresolver";
       };
-      networks = [
-        "traefik_network"
+      extraOptions = [
+        "--network=traefik_network"
       ];
       dependsOn = [
         "traefik"

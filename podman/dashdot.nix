@@ -17,12 +17,12 @@ in {
         "traefik.http.routers.dashdot.entrypoints" = "websecure";
         "traefik.http.routers.dashdot.tls.certresolver" = "myresolver";
       };
-      networks = [
-        "traefik_network"
+      extraOptions = [
+        "--network=traefik_network"
       ];
       dependsOn = [
         "traefik"
       ];
     };
-  }
+  };
 }
