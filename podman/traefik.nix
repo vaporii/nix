@@ -4,7 +4,7 @@ in {
   options.podman.services.traefik = {
     enable = lib.mkEnableOption "traefik";
     storage = lib.mkOption {
-      type = lib.types.oneOf [ lib.types.path lib.types.str ];
+      type = lib.types.str;
       description = "string volume name or path to store traefik data";
       default = "traefik-data";
     };

@@ -5,6 +5,7 @@
     ./traefik.nix
     ./dashdot.nix
     ./v8p.me.nix
+    ./jellyfin.nix
   ];
 
   options.podman.enable = lib.mkEnableOption "podman";

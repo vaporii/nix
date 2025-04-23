@@ -88,10 +88,18 @@
     services = {
       # turn off https temporarily
       traefik.enable = true;
-      dashdot.enable = true;
-      dashdot.https = false; 
-      "v8p.me".enable = true;
-      "v8p.me".https = false;
+      dashdot = {
+        enable = true;
+        https = false;
+      };
+      "v8p.me" = {
+        enable = true;
+        https = false;
+      };
+      jellyfin = {
+        enable = true;
+        https = false;
+      };
     };
   };
 
