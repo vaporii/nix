@@ -20,7 +20,6 @@
         jnoortheen.nix-ide
         jdinhlife.gruvbox
         svelte.svelte-vscode
-        ardenivanov.svelte-intellisense
         # vscodevim.vim
       ];
       userSettings = {

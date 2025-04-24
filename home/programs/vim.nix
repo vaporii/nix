@@ -121,6 +121,7 @@
             enable = true;
             popupBorderStyle = "NC"; # double, none, rounded, shadow, single, solid
             filesystem = {
+              useLibuvFileWatcher = true;
               hijackNetrwBehavior = "open_current";
               findArgs = {
                 fd = [
