@@ -20,6 +20,7 @@
         jnoortheen.nix-ide
         jdinhlife.gruvbox
         svelte.svelte-vscode
+        ziglang.vscode-zig
         # vscodevim.vim
       ];
       userSettings = {
