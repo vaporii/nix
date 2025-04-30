@@ -41,6 +41,8 @@
             };
           };
         };
+        "zig.zls.enabled" = "on";
+        "editor.inlayHints.enabled" = "offUnlessPressed";
       };
     };
   };
