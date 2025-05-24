@@ -114,7 +114,6 @@
     '';
     serviceConfig = {
       Type = "simple";
-      Restart = "unless-stopped";
       RestartSec = 5;
       User = "vaporii";
     };
