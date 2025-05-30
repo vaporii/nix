@@ -11,6 +11,10 @@
       portalPackage = null;
     };
 
+    wayland.windowManager.hyprland.plugins = [
+      pkgs.hyprlandPlugins.hypr-dynamic-cursors
+    ];
+
     wayland.windowManager.hyprland.settings = {
       "$mod" = "SUPER";
       "$modalt" = "MOD3";
@@ -24,6 +28,12 @@
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
       ];
+
+      "plugin:dynamic-cursors" = {
+        enabled = true;
+
+        mode = "stretch";
+      };
 
       bindm = [
         "$mod, mouse:272, movewindow"
@@ -80,7 +90,7 @@
         "${pkgs.waybar}/bin/waybar"
       ];
 
-      monitor = ",1920x1080@60,0x0,1";
+      monitor = [",1920x1080@60,0x0,1,bitdepth,10,cm,auto"];
 
       general = {
         gaps_in = 5;
