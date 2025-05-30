@@ -33,6 +33,7 @@
   rofi.enable = true;
   starship.enable = true;
   waybar.enable = true;
+  eww.enable = true;
 
   vim.enable = true;
   vim.nixHost = "laptop";
