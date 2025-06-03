@@ -127,6 +127,7 @@
     builtins.elem (lib.getName pkg) [
       "discord"
       "steam"
+      "steam-unwrapped"
     ];
 
   users.users.vaporii = {
