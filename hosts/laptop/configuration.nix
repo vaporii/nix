@@ -126,6 +126,7 @@
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "discord"
+      "steam"
     ];
 
   users.users.vaporii = {
