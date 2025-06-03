@@ -106,20 +106,20 @@
     pulse.enable = true;
   };
 
-  systemd.services."rsync" = {
-    enable = true;
-    wantedBy = [ "network-online.target" ];
-    script = /* bash */ ''
-      while ${pkgs.inotify-tools}/bin/inotifywait -e create -e delete -r ~/Persist; do
-        ${pkgs.rsync}/bin/rsync -avz --protocol=31 --delete -e "${pkgs.openssh}/bin/ssh -i /home/vaporii/.ssh/v8p_ed25519" /home/vaporii/Persist vaporii@vaporii.net:~/back || exit 1
-      done
-    '';
-    serviceConfig = {
-      Type = "simple";
-      RestartSec = 5;
-      User = "vaporii";
-    };
-  };
+  # systemd.services."rsync" = {
+  #   enable = true;
+  #   wantedBy = [ "network-online.target" ];
+  #   script = /* bash */ ''
+  #     while ${pkgs.inotify-tools}/bin/inotifywait -e create -e delete -r ~/Persist; do
+  #       ${pkgs.rsync}/bin/rsync -avz --protocol=31 --delete -e "${pkgs.openssh}/bin/ssh -i /home/vaporii/.ssh/v8p_ed25519" /home/vaporii/Persist vaporii@vaporii.net:~/back || exit 1
+  #     done
+  #   '';
+  #   serviceConfig = {
+  #     Type = "simple";
+  #     RestartSec = 5;
+  #     User = "vaporii";
+  #   };
+  # };
 
   services.libinput.enable = true;
 

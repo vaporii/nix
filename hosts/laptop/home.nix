@@ -45,6 +45,7 @@
   flameshot.enable = true;
 
   hyprland.enable = true;
+  rsync.enable = true;
 
   home.stateVersion = "24.11";
 }
