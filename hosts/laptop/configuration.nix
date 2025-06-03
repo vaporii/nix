@@ -97,6 +97,8 @@
     xwayland.enable = true;
   };
 
+  programs.steam.enable = true;
+
   services.xserver.xkb.layout = "us";
 
   services.pipewire = {
