@@ -11,6 +11,7 @@
     ./kitty.nix
     ./rofi.nix
     ./starship.nix
+    ./steam.nix
     ./vim.nix
     ./vscode.nix
     ./waybar.nix

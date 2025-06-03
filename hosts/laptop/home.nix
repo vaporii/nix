@@ -32,6 +32,7 @@
   kitty.enable = true;
   rofi.enable = true;
   starship.enable = true;
+  steam.enable = true;
   waybar.enable = true;
   eww.enable = true;
 
