@@ -18,6 +18,7 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    networking.firewall.allowedTCPPorts = [ 80 443 ];
     virtualisation.oci-containers.containers.traefik = {
       image = "traefik";
       volumes = [

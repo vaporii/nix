@@ -66,13 +66,13 @@
             impermanence.nixosModules.impermanence
           ];
         };
-        servii = serverpkgs.lib.nixosSystem {
+        brunswick = serverpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; inherit system; };
 
           modules = [
             inputs.serverdisko.nixosModules.default
 
-            ./hosts/servii/configuration.nix
+            ./hosts/brunswick/configuration.nix
             inputs.server-home-manager.nixosModules.default
             impermanence.nixosModules.impermanence
           ];
