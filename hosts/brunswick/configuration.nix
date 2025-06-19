@@ -53,7 +53,7 @@
     umount /btrfs_tmp
   '';
 
-  networking.hostName = "servii"; # Define your hostname.
+  networking.hostName = "brunswick"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   time.timeZone = "America/Chicago";
