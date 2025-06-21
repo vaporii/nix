@@ -139,7 +139,6 @@
       blender
       unzip
       gimp
-      equibop
       discordchatexporter-cli
       eclipses.eclipse-java
       qemu_kvm

@@ -14,5 +14,6 @@
     ./vim.nix
     ./vscode.nix
     ./waybar.nix
+    ./vesktop.nix
   ];
 }

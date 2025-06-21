@@ -12,7 +12,6 @@
       "Persist"
       ".ssh"
       ".mozilla"
-      ".config/equibop"
       ".config/VSCodium"
     ];
     files = [
@@ -32,6 +31,7 @@
   kitty.enable = true;
   rofi.enable = true;
   starship.enable = true;
+  vesktop.enable = true;
   waybar.enable = true;
   eww.enable = true;
 
