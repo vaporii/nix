@@ -21,6 +21,7 @@
         jdinhlife.gruvbox
         svelte.svelte-vscode
         ziglang.vscode-zig
+        golang.go
         # vscodevim.vim
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
