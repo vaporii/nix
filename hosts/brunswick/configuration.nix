@@ -84,20 +84,20 @@
   };
 
   podman = {
-    enable = true;
+    enable = false;
     services = {
       # turn off https temporarily
-      traefik.enable = true;
+      traefik.enable = false;
       dashdot = {
-        enable = true;
+        enable = false;
         https = false;
       };
       "v8p.me" = {
-        enable = true;
+        enable = false;
         https = false;
       };
       jellyfin = {
-        enable = true;
+        enable = false;
         https = false;
       };
     };

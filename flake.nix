@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    serverpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
+    serverpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
 
     disko = {
       url = "github:nix-community/disko";
@@ -21,7 +21,7 @@
     };
 
     server-home-manager = {
-      url = "github:nix-community/home-manager?ref=release-24.11";
+      url = "github:nix-community/home-manager?ref=release-25.05";
       inputs.nixpkgs.follows = "serverpkgs";
     };
 

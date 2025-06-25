@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
+    ../../home
   ];
 
   home.persistence."/persist/home" = {
@@ -15,6 +16,11 @@
     ];
     allowOther = true;
   };
+
+  vim.enable = true;
+  vim.nixHost = "brunswick";
+
+  git.enable = true;
 
   home.stateVersion = "24.11";
 }
