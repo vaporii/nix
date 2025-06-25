@@ -53,8 +53,8 @@
     umount /btrfs_tmp
   '';
 
-  networking.hostName = "brunswick"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.hostName = "brunswick";
+  networking.networkmanager.enable = true;
 
   time.timeZone = "America/Chicago";
 
@@ -84,7 +84,7 @@
   };
 
   podman = {
-    enable = false;
+    enable = true;
     services = {
       # turn off https temporarily
       traefik.enable = false;
