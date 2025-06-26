@@ -6,6 +6,7 @@
     ./dashdot.nix
     ./v8p.me.nix
     ./jellyfin.nix
+    ./vaporii.net.nix
   ];
 
   options.podman.enable = lib.mkEnableOption "podman";

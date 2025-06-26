@@ -75,6 +75,10 @@
             key = "<C-K>";
             action = "<cmd>wincmd k<CR>";
           }
+          {
+            key = "<esc>";
+            action = "<C-\\><C-n>";
+          }
         ];
 
         plugins = {

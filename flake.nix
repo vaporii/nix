@@ -5,6 +5,9 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     serverpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
 
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "serverpkgs";
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,12 +42,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
+
     v8p = {
       url = "github:vaporii/v8p.me-cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     "v8p.me" = {
+      url = "github:vaporii/v8p.me";
+      inputs.nixpkgs.follows = "serverpkgs";
+    };
+
+    "vaporii.net" = {
       url = "github:vaporii/v8p.me";
       inputs.nixpkgs.follows = "serverpkgs";
     };
@@ -75,6 +85,8 @@
             ./hosts/brunswick/configuration.nix
             inputs.server-home-manager.nixosModules.default
             impermanence.nixosModules.impermanence
+            inputs.sops-nix.nixosModules.sops
+            inputs.vscode-server.nixosModules.default
           ];
         };
       };
