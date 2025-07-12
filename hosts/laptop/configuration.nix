@@ -128,11 +128,12 @@
       "discord"
       "steam"
       "steam-unwrapped"
+      "wootility"
     ];
 
   users.users.vaporii = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "input" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "libvirtd" "input" "dialout" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
       hyfetch
@@ -142,9 +143,15 @@
       discordchatexporter-cli
       eclipses.eclipse-java
       qemu_kvm
+      wootility
     ];
     hashedPassword = "$y$j9T$h14SkfRLxr/uUwoJbEb35.$l9k5T4/xHp4h1V95l/OdaYjC8Sb4AFXpvkPaqYJKE97";
   };
+
+  services.udev.extraRules = ''
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", MODE:="0660", GROUP="input", TAG+="uaccess"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", MODE:="0660", GROUP="input", TAG+="uaccess" 
+  '';
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;

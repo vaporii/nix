@@ -13,6 +13,7 @@
       ".ssh"
       ".mozilla"
       ".config/VSCodium"
+      ".config/vesktop"
     ];
     files = [
       ".bash_history"
