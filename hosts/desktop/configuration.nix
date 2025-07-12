@@ -83,6 +83,14 @@
     xwayland.enable = true;
   };
 
+  services.xserver.videoDrivers = ["nvidia"];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = true;
+    nvidiaSettings = true;
+  };
+
   programs.steam.enable = true;
 
   services.xserver.xkb.layout = "us";
