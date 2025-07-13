@@ -7,6 +7,7 @@
       modulesRight = lib.mkOption {
         type = lib.types.listOf lib.types.str;
         default = [
+          "pulseaudio" "custom/end" "custom/start"
           "memory" "custom/end" "custom/start"
           "cpu" "custom/end" "custom/start"
           "temperature" "custom/end" "custom/start"
@@ -52,6 +53,12 @@
 
         "custom/end" = {
           format = " ";
+        };
+
+        "pulseaudio" = {
+          format-icons = [ "" "" "" ];
+          format-source-muted = " 0%";
+          format = "{icon} {volume}%";
         };
 
         "hyprland/workspaces" = {

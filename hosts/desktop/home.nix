@@ -38,6 +38,7 @@
   waybar = {
     enable = true;
     modulesRight = [
+      "pulseaudio" "custom/end" "custom/start"
       "memory" "custom/end" "custom/start"
       "cpu" "custom/end" "custom/start"
       "temperature" "custom/end" "custom/start"

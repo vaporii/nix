@@ -50,7 +50,8 @@ window#waybar {
 #temperature,
 #backlight,
 #battery,
-#clock {
+#clock,
+#pipewire {
   background-color: #282828;
   /* border: 2px solid #665C54; */
   /* padding: 0 10px; */
