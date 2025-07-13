@@ -34,7 +34,18 @@
   rofi.enable = true;
   starship.enable = true;
   vesktop.enable = true;
-  waybar.enable = true;
+
+  waybar = {
+    enable = true;
+    modulesRight = [
+      "memory" "custom/end" "custom/start"
+      "cpu" "custom/end" "custom/start"
+      "temperature" "custom/end" "custom/start"
+      "network" "custom/end" "custom/start"
+      "clock"
+    ];
+  };
+
   eww.enable = true;
 
   vim.enable = true;

@@ -4,6 +4,26 @@
   options = {
     waybar = {
       enable = lib.mkEnableOption "enable waybar module";
+      modulesRight = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [
+          "memory" "custom/end" "custom/start"
+          "cpu" "custom/end" "custom/start"
+          "temperature" "custom/end" "custom/start"
+          "backlight" "custom/end" "custom/start"
+          "network" "custom/end" "custom/start"
+          "battery" "custom/end" "custom/start"
+          "clock"
+        ];
+      };
+      modulesCenter = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "hyprland/window" ];
+      };
+      modulesLeft = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "hyprland/workspaces" "tray" ];
+      };
     };
   };
 
@@ -22,17 +42,9 @@
 
         spacing = -10; # fucked up hack for the diagonals
         
-        modules-left = [ "hyprland/workspaces" "tray" ];
-        modules-center = [ "hyprland/window" ];
-        modules-right = [
-          "memory" "custom/end" "custom/start"
-          "cpu" "custom/end" "custom/start"
-          "temperature" "custom/end" "custom/start"
-          "backlight" "custom/end" "custom/start"
-          "network" "custom/end" "custom/start"
-          "battery" "custom/end" "custom/start"
-          "clock"
-        ];
+        modules-left = config.waybar.modulesLeft;
+        modules-center = config.waybar.modulesCenter;
+        modules-right = config.waybar.modulesRight;
 
         "custom/start" = {
           format = " ";
