@@ -1,7 +1,16 @@
 { pkgs, lib, config, ... }:
 
 {
-  options.hyprland.enable = lib.mkEnableOption "hyprland";
+  options = {
+    hyprland = {
+      enable = lib.mkEnableOption "hyprland";
+      monitors = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        description = "monitor settings";
+        default = [",1920x1080@60,0x0,1,bitdepth,10,cm,auto"];
+      };
+    };
+  };
 
   config = lib.mkIf config.hyprland.enable {
     wayland.windowManager.hyprland = {
@@ -90,7 +99,9 @@
         "${pkgs.waybar}/bin/waybar"
       ];
 
-      monitor = [",1920x1080@60,0x0,1,bitdepth,10,cm,auto"];
+      
+      monitor = config.hyprland.monitors;
+      # monitor = [",1920x1080@60,0x0,1,bitdepth,10,cm,auto"];
 
       general = {
         gaps_in = 5;

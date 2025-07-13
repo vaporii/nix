@@ -56,7 +56,13 @@
   };
   flameshot.enable = true;
 
-  hyprland.enable = true;
+  hyprland = {
+    enable = true;
+    monitors = [
+      "HDMI-A-1,1920x1080@60,0x0,1,bitdepth,8,cm,auto"
+      "DP-2,1920x1080@60,1920x0,1,bitdepth,8,cm,auto"
+    ];
+  };
   rsync.enable = true;
 
   home.stateVersion = "24.11";

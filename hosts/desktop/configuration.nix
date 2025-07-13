@@ -121,9 +121,6 @@
       blender
       unzip
       gimp
-      discordchatexporter-cli
-      eclipses.eclipse-java
-      qemu_kvm
     ];
     hashedPassword = "$y$j9T$h14SkfRLxr/uUwoJbEb35.$l9k5T4/xHp4h1V95l/OdaYjC8Sb4AFXpvkPaqYJKE97";
   };
