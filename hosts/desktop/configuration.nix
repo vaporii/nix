@@ -107,6 +107,9 @@
       "discord"
       "steam"
       "steam-unwrapped"
+      "nvidia-x11"
+      "nvidia-settings"
+      "nvidia-persistenced"
     ];
 
   users.users.vaporii = {

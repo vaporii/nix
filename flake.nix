@@ -76,6 +76,17 @@
             impermanence.nixosModules.impermanence
           ];
         };
+        desktop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; inherit system; };
+
+          modules = [
+            inputs.disko.nixosModules.default
+
+            ./hosts/desktop/configuration.nix
+            inputs.home-manager.nixosModules.default
+            impermanence.nixosModules.impermanence
+          ];
+        };
         brunswick = serverpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; inherit system; };
 
