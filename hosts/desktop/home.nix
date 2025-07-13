@@ -13,6 +13,8 @@
       ".ssh"
       ".mozilla"
       ".config/VSCodium"
+      ".local/share/Steam"
+      ".steam"
     ];
     files = [
       ".bash_history"
