@@ -41,7 +41,19 @@
   vscode.enable = true;
   vscode.nixHost = "desktop";
 
-  hyprpaper.enable = true;
+  hyprpaper = {
+    enable = true;
+    monitors = [
+      {
+        monitorName = "DP-2";
+        path = ../../assets/backgrounds/bocchi_the_rock_city.jpg;
+      }
+      {
+        monitorName = "HDMI-A-1";
+        path = ../../assets/backgrounds/bocchi_the_rock_city.jpg;
+      }
+    ];
+  };
   flameshot.enable = true;
 
   hyprland.enable = true;
