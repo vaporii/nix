@@ -15,6 +15,7 @@
       ".config/VSCodium"
       ".local/share/Steam"
       ".steam"
+      ".config/vesktop"
     ];
     files = [
       ".bash_history"
