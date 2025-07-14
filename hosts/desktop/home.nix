@@ -38,6 +38,7 @@
   waybar = {
     enable = true;
     modulesRight = [
+      "custom/start"
       "pulseaudio" "custom/end" "custom/start"
       "memory" "custom/end" "custom/start"
       "cpu" "custom/end" "custom/start"
@@ -45,6 +46,7 @@
       "network" "custom/end" "custom/start"
       "clock"
     ];
+    monitors = [ "DP-2" ];
   };
 
   eww.enable = true;

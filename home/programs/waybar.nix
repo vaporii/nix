@@ -19,11 +19,16 @@
       };
       modulesCenter = lib.mkOption {
         type = lib.types.listOf lib.types.str;
-        default = [ "hyprland/window" ];
+        default = [ "custom/start" "hyprland/window" "custom/end" ];
       };
       modulesLeft = lib.mkOption {
         type = lib.types.listOf lib.types.str;
-        default = [ "hyprland/workspaces" "tray" ];
+        default = [ "hyprland/workspaces" "custom/end" "custom/start" "tray" "custom/end" ];
+      };
+      monitors = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ "eDP-1" ];
+        description = "monitors to display bar on";
       };
     };
   };
@@ -33,6 +38,7 @@
     programs.waybar.settings = {
       mainBar = {
         layer = "top";
+        output = config.waybar.monitors;
         position = "top";
         mode = "dock";
         height = 40;
@@ -53,6 +59,10 @@
 
         "custom/end" = {
           format = " ";
+        };
+
+        "tray" = {
+          spacing = 10;
         };
 
         "pulseaudio" = {
