@@ -6,7 +6,6 @@
       (import ./disko.nix { device = "/dev/sda"; })
       ./hardware-configuration.nix
       ../../podman
-      inputs.sops-nix.nixosModules.sops
     ];
   
   fileSystems."/persist".neededForBoot = true;
@@ -84,17 +83,6 @@
     backupFileExtension = "backup";
   };
 
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-
-  sops.age.keyFile = "/home/admin/.config/sops/age/keys.txt";
-
-  sops.secrets."containers/vaporii.net.env" = {
-    format = "dotenv";
-    sopsFile = ./secrets/containers/vaporii.net.env;
-    owner = "admin";
-  };
-
   podman = {
     enable = true;
     services = {
@@ -113,7 +101,7 @@
         https = false;
       };
       "vaporii.net" = {
-        enable = true;
+        enable = false;
         https = false;
       };
     };

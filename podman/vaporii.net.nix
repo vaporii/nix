@@ -31,9 +31,9 @@ in {
       dependsOn = [
         "traefik"
       ];
-      environmentFiles = [
-        config.sops.secrets."containers/vaporii.net.env".path
-      ];
+      # environmentFiles = [
+      #   config.sops.secrets."containers/vaporii.net.env".path
+      # ];
     };
   };
 }

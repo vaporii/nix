@@ -1,7 +1,0 @@
-keys:
-  - &primary age13e24hamr3x7j245pnhzeqdsm7slfcezrj2ksc645tynxkngqq5ssvlan7u
-creation_rules:
-  - path_regex: .*
-    key_groups:
-      - age:
-        - *primary
