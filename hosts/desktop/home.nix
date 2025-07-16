@@ -15,7 +15,7 @@
       ".config/VSCodium"
       ".local/share/Steam"
       ".steam"
-      ".config/vesktop"
+      ".config/equibop"
     ];
     files = [
       ".bash_history"
@@ -34,7 +34,7 @@
   kitty.enable = true;
   rofi.enable = true;
   starship.enable = true;
-  vesktop.enable = true;
+  vesktop.enable = false;
 
   waybar = {
     enable = true;
