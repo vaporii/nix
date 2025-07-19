@@ -70,6 +70,10 @@
   networking.hostName = "laptop"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
   time.timeZone = "America/Chicago";
 
   i18n.defaultLocale = "en_US.UTF-8";
