@@ -104,6 +104,7 @@
         enable = false;
         https = false;
       };
+      pufferpanel.enable = true;
     };
   };
 
