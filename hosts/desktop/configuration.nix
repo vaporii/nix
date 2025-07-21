@@ -93,6 +93,9 @@
 
   programs.steam.enable = true;
 
+  hardware.graphics.enable32Bit = true;
+  hardware.graphics.enable = true;
+
   services.xserver.xkb.layout = "us";
 
   services.pipewire = {
@@ -149,6 +152,7 @@
     kitty
     ags
     grim
+    egl-wayland
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
