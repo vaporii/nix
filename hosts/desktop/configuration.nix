@@ -83,12 +83,14 @@
     xwayland.enable = true;
   };
 
+  services.xserver.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
     modesetting.enable = true;
     open = true;
     nvidiaSettings = true;
+    powerManagement.enable = true;
   };
 
   programs.steam.enable = true;
@@ -104,7 +106,7 @@
   };
 
   services.libinput.enable = true;
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
