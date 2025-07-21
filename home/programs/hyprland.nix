@@ -20,9 +20,9 @@
       portalPackage = null;
     };
 
-    wayland.windowManager.hyprland.plugins = [
-      pkgs.hyprlandPlugins.hypr-dynamic-cursors
-    ];
+    # wayland.windowManager.hyprland.plugins = [
+    #   pkgs.hyprlandPlugins.hypr-dynamic-cursors
+    # ];
 
     wayland.windowManager.hyprland.settings = {
       "$mod" = "SUPER";
@@ -38,11 +38,11 @@
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
       ];
 
-      "plugin:dynamic-cursors" = {
-        enabled = true;
+      # "plugin:dynamic-cursors" = {
+      #   enabled = true;
 
-        mode = "stretch";
-      };
+      #   mode = "stretch";
+      # };
 
       bindm = [
         "$mod, mouse:272, movewindow"
