@@ -13,6 +13,10 @@
       ".ssh"
       ".mozilla"
       ".config/VSCodium"
+      {
+        directory = ".local/share/Steam";
+        method = "symlink";
+      }
       ".config/vesktop"
     ];
     files = [
