@@ -49,7 +49,7 @@
       "network" "custom/end" "custom/start"
       "clock"
     ];
-    monitors = [ "DP-2" ];
+    monitors = [ "DP-1" ];
   };
 
   eww.enable = true;
@@ -64,7 +64,7 @@
     enable = true;
     monitors = [
       {
-        monitorName = "DP-2";
+        monitorName = "DP-1";
         path = ../../assets/backgrounds/bocchi_the_rock_city.jpg;
       }
       {
@@ -79,7 +79,7 @@
     enable = true;
     monitors = [
       "HDMI-A-1,1920x1080@60,0x0,1,bitdepth,8,cm,auto"
-      "DP-2,1920x1080@60,1920x0,1,bitdepth,8,cm,auto"
+      "DP-1,2560x1440@180,1920x-360,1,bitdepth,8,cm,auto"
     ];
   };
   rsync.enable = true;

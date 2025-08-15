@@ -106,6 +106,7 @@
   };
 
   services.libinput.enable = true;
+  hardware.wooting.enable = true;
   # virtualisation.docker.enable = true;
 
   nixpkgs.config.allowUnfreePredicate = pkg:
@@ -116,6 +117,7 @@
       "nvidia-x11"
       "nvidia-settings"
       "nvidia-persistenced"
+      "wootility"
     ];
 
   users.users.vaporii = {
@@ -129,6 +131,7 @@
       gimp
       equibop
       prismlauncher
+      audacity
     ];
     hashedPassword = "$y$j9T$h14SkfRLxr/uUwoJbEb35.$l9k5T4/xHp4h1V95l/OdaYjC8Sb4AFXpvkPaqYJKE97";
   };
