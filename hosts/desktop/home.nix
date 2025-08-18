@@ -29,7 +29,7 @@
 
   theme.enable = true;
 
-  bash.enable = true;
+  zsh.enable = true;
   fastfetch.enable = true;
   firefox.enable = true;
   git.enable = true;

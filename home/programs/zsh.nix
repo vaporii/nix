@@ -2,20 +2,20 @@
 
 {
   options = {
-    bash = {
-      enable = lib.mkEnableOption "enable bash module";
+    zsh = {
+      enable = lib.mkEnableOption "enable zsh module";
     };
   };
 
-  config = lib.mkIf config.bash.enable {
-    programs.bash = {
+  config = lib.mkIf config.zsh.enable {
+    programs.zsh = {
       enable = true;
       
       shellAliases = {
         clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
       };
 
-      historyControl = [ "erasedups" ];
+      # historyControl = [ "erasedups" ];
     };
   };
 }

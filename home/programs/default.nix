@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./bash.nix
+    ./zsh.nix
     ./eww.nix
     ./fastfetch.nix
     ./firefox.nix
