@@ -22,6 +22,8 @@
         svelte.svelte-vscode
         ziglang.vscode-zig
         golang.go
+        esbenp.prettier-vscode
+        ritwickdey.liveserver
         # vscodevim.vim
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
@@ -51,6 +53,7 @@
         };
         "zig.zls.enabled" = "on";
         "editor.inlayHints.enabled" = "offUnlessPressed";
+        "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
     };
   };

@@ -38,6 +38,13 @@
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
       ];
 
+      windowrule = [
+        "noborder, class:^flameshot$"
+        "float, class:^flameshot$"
+        "suppressevent fullscreen, class:^flameshot$"
+        "move -1920 0, class:^flameshot$"
+      ];
+
       # "plugin:dynamic-cursors" = {
       #   enabled = true;
 
@@ -123,7 +130,7 @@
       };
 
       decoration = {
-        rounding = 10;
+        # rounding = 10;
 
         active_opacity = 1.0;
         inactive_opacity = 0.9;
