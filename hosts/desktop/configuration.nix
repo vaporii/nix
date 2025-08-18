@@ -148,6 +148,10 @@
     backupFileExtension = "backup1";
   };
 
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+  users.users.vaporii.shell = pkgs.zsh;
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.variables.XCURSOR_SIZE = "20";
 
