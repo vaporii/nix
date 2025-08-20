@@ -12,7 +12,6 @@
       "Persist"
       ".ssh"
       ".mozilla"
-      ".config/VSCodium"
       {
         directory = ".local/share/Steam";
         method = "symlink";
@@ -21,6 +20,9 @@
     ];
     files = [
       ".bash_history"
+      ".zsh_history"
+      ".cache/rofi-entry-history.txt"
+      ".cache/rofi3.druncache"
     ];
     allowOther = true;
   };

@@ -70,7 +70,7 @@
     restart = false;
     settings = rec {
       initial_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu -t";
+        command = "${pkgs.tuigreet}/bin/tuigreet --user-menu -t";
         # command = "${pkgs.hyprland}/bin/Hyprland";
         user = "vaporii";
       };
@@ -118,6 +118,7 @@
       "nvidia-settings"
       "nvidia-persistenced"
       "wootility"
+      "corefonts"
     ];
 
   users.users.vaporii = {
@@ -132,6 +133,7 @@
       equibop
       prismlauncher
       audacity
+      lmms
     ];
     hashedPassword = "$y$j9T$h14SkfRLxr/uUwoJbEb35.$l9k5T4/xHp4h1V95l/OdaYjC8Sb4AFXpvkPaqYJKE97";
   };
@@ -171,6 +173,7 @@
     nerd-fonts.caskaydia-mono
     noto-fonts
     noto-fonts-cjk-sans
+    corefonts
   ];
 
   system.stateVersion = "24.11"; # Did you read the comment?

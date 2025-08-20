@@ -14,8 +14,13 @@
       shellAliases = {
         clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
       };
+    };
 
-      # historyControl = [ "erasedups" ];
+    programs.direnv = {
+      enable = true;
+
+      nix-direnv.enable = true;
+      silent = true;
     };
   };
 }

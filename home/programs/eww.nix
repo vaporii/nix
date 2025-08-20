@@ -12,6 +12,7 @@
     programs.eww.package = pkgs.symlinkJoin {
       name = "eww";
       paths = [ pkgs.eww ];
+      meta.mainProgram = "eww";
       buildInputs = [ pkgs.makeWrapper ];
       postBuild = ''
         wrapProgram $out/bin/eww \
