@@ -12,15 +12,18 @@
       "Persist"
       ".ssh"
       ".mozilla"
-      ".config/VSCodium"
       {
         directory = ".local/share/Steam";
         method = "symlink";
       }
       ".config/vesktop"
+      ".local/share/Anki2"
     ];
     files = [
       ".bash_history"
+      ".zsh_history"
+      ".cache/rofi-entry-history.txt"
+      ".cache/rofi3.druncache"
     ];
     allowOther = true;
   };
@@ -29,7 +32,7 @@
 
   theme.enable = true;
 
-  bash.enable = true;
+  zsh.enable = true;
   fastfetch.enable = true;
   firefox.enable = true;
   git.enable = true;
