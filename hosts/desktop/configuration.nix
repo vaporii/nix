@@ -64,6 +64,25 @@
   #   keyMap = "us";
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
+  i18n.inputMethod = {
+    type = "fcitx5";
+    enable = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+    ];
+    fcitx5.waylandFrontend = true;
+    fcitx5.settings.inputMethod = {
+      GroupOrder."0" = "Default";
+      "Groups/0" = {
+        Name = "Default";
+        "Default Layout" = "us";
+        DefaultIM = "keyboard-us";
+      };
+      "Groups/0/Items/0".Name = "keyboard-us";
+      "Groups/0/Items/1".Name = "mozc";
+    };
+  };
 
   services.greetd = {
     enable = true;
@@ -109,6 +128,26 @@
   hardware.wooting.enable = true;
   # virtualisation.docker.enable = true;
 
+  environment.variables =
+    let
+      makePluginPath = format:
+        (lib.makeSearchPath format [
+          "$HOME/.nix-profile/lib"
+          "/run/current-system/sw/lib"
+          "/etc/profiles/per-user/$USER/lib"
+        ])
+        + ":$HOME/.${format}";
+    in
+    {
+      DSSI_PATH = makePluginPath "dssi";
+      LADSPA_PATH = makePluginPath "ladspa";
+      LV2_PATH = makePluginPath "lv2";
+      LXVST_PATH = makePluginPath "lxvst";
+      VST_PATH = makePluginPath "vst";
+      VST3_PATH = makePluginPath "vst3";
+      XCURSOR_SIZE = "20";
+    };
+
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "discord"
@@ -134,6 +173,8 @@
       prismlauncher
       audacity
       lmms
+      yabridge
+      yabridgectl
     ];
     hashedPassword = "$y$j9T$h14SkfRLxr/uUwoJbEb35.$l9k5T4/xHp4h1V95l/OdaYjC8Sb4AFXpvkPaqYJKE97";
   };
@@ -155,7 +196,6 @@
   users.users.vaporii.shell = pkgs.zsh;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.variables.XCURSOR_SIZE = "20";
 
   environment.systemPackages = with pkgs; [
     wget
