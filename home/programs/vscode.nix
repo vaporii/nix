@@ -24,6 +24,7 @@
         golang.go
         esbenp.prettier-vscode
         ritwickdey.liveserver
+        vadimcn.vscode-lldb
         # vscodevim.vim
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
