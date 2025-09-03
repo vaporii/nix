@@ -47,6 +47,9 @@
         search.force = true;
         settings = {
           "extensions.autoDisableScopes" = 0;
+          "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+          "browser.newtabpage.activity-stream.showWeather" = false;
+          "browser.newtabpage.activity-stream.feeds.topsites" = false;
         };
         extensions = {
           packages = with inputs.firefox-addons.packages."x86_64-linux"; [
