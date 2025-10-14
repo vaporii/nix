@@ -84,6 +84,10 @@
     };
   };
 
+  services.udev.extraRules = ''
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="346e", ATTRS{idProduct}=="0004", MODE="0666"
+  '';
+
   services.greetd = {
     enable = true;
     restart = false;
@@ -124,8 +128,11 @@
     pulse.enable = true;
   };
 
+  services.flatpak.enable = true;
   services.libinput.enable = true;
   hardware.wooting.enable = true;
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
   # virtualisation.docker.enable = true;
 
   environment.variables =
@@ -175,6 +182,10 @@
       lmms
       yabridge
       yabridgectl
+      freecad
+      yabridge
+      yabridgectl
+      boxflat
     ];
     hashedPassword = "$y$j9T$h14SkfRLxr/uUwoJbEb35.$l9k5T4/xHp4h1V95l/OdaYjC8Sb4AFXpvkPaqYJKE97";
   };
