@@ -12,6 +12,8 @@
       "Persist"
       ".ssh"
       ".mozilla"
+      ".local/share/PrismLauncher"
+      ".rusherhack"
       {
         directory = ".local/share/Steam";
         method = "symlink";
