@@ -109,6 +109,9 @@
   services.xserver.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
 
+  hardware.opengl.enable = true;
+  hardware.opengl.driSupport32Bit = true;
+
   hardware.nvidia = {
     modesetting.enable = true;
     open = true;
@@ -191,6 +194,7 @@
       openjdk24
       gradle
       arduino-ide
+      cudatoolkit
     ];
     hashedPassword = "$y$j9T$h14SkfRLxr/uUwoJbEb35.$l9k5T4/xHp4h1V95l/OdaYjC8Sb4AFXpvkPaqYJKE97";
   };
