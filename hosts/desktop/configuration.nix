@@ -47,7 +47,7 @@
     fi
 
     delete_subvolume_recursively() {
-.      IFS=$'\n'
+      IFS=$'\n'
       for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
         delete_subvolume_recursively "/btrfs_tmp/$i"
       done
