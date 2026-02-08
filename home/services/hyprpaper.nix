@@ -31,12 +31,15 @@
   config = lib.mkIf config.hyprpaper.enable {
     services.hyprpaper.enable = true;
     services.hyprpaper.settings = {
-      preload = builtins.map (monitor: "${monitor.path}") config.hyprpaper.monitors;
+      preload = map (monitor: "${monitor.path}") config.hyprpaper.monitors;
       # wallpaper = [
       #   "eDP-1,${../../assets/backgrounds/bocchi_the_rock_city.jpg}"
       # ];
-      wallpaper = builtins.map (monitor:
-        "${monitor.monitorName},${monitor.path}"
+      wallpaper = map (monitor:
+        {
+          monitor = "${monitor.monitorName}";
+          path = "${monitor.path}";
+        }
       ) config.hyprpaper.monitors;
     };
   };

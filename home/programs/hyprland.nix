@@ -39,10 +39,10 @@
       ];
 
       windowrule = [
-        "noborder, class:^flameshot$"
-        "float, class:^flameshot$"
-        "suppressevent fullscreen, class:^flameshot$"
-        "move -1920 0, class:^flameshot$"
+        # "noborder, class:^flameshot$"
+        # "float, class:^flameshot$"
+        # "suppressevent fullscreen, class:^flameshot$"
+        # "move -1920 0, class:^flameshot$"
       ];
 
       # "plugin:dynamic-cursors" = {
@@ -104,6 +104,7 @@
 
       exec-once = [
         "${pkgs.waybar}/bin/waybar"
+        # "${pkgs.hyprpaper}/bin/hyprpaper"
       ];
 
       

@@ -123,16 +123,19 @@
 
           neo-tree = {
             enable = true;
-            popupBorderStyle = "NC"; # double, none, rounded, shadow, single, solid
+            settings = {
+
+            popup_border_style = "NC"; # double, none, rounded, shadow, single, solid
             filesystem = {
-              useLibuvFileWatcher = true;
-              hijackNetrwBehavior = "open_current";
-              findArgs = {
-                fd = [
-                  "--hidden"
-                  "--exclude"
-                  ".git"
-                ];
+              use_libuv_file_watcher = true;
+              hijack_netrw_behavior = "open_current";
+                # findArgs = {
+                #   fd = [
+                #     "--hidden"
+                #     "--exclude"
+                #     ".git"
+                #   ];
+                # };
               };
             };
           };

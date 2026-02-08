@@ -41,6 +41,12 @@
           SponsoredPocket = false;
           SponsoredTopSites = false;
         };
+        GenerativeAI = {
+          Enabled = false;
+          Chatbot = false;
+          LinkPreviews = false;
+          TabGroups = false;
+        };
       };
       profiles.default = {
         search.default = config.firefox.search.default;
@@ -50,6 +56,8 @@
           "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
           "browser.newtabpage.activity-stream.showWeather" = false;
           "browser.newtabpage.activity-stream.feeds.topsites" = false;
+          "browser.tabs.groups.smart.userEnabled" = false;
+          "browser.ml.linkPreview.enabled" = false;
         };
         extensions = {
           packages = with inputs.firefox-addons.packages."x86_64-linux"; [
@@ -94,7 +102,7 @@
 
     textfox = {
       enable = true;
-      profile = "default";
+      profiles = [ "default" ];
     };
   };
 }

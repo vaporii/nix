@@ -1,4 +1,4 @@
-{ pkgs, inputs, lib, system, ... }:
+{ pkgs, inputs, lib, system, config, ... }:
 
 {
   imports =
@@ -23,10 +23,19 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  boot.loader.grub.enable = true;
+  boot.loader.grub.useOSProber = true;
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 5;
+
+  nix.settings.download-buffer-size = 524288000;
+
+  boot.kernelModules = [ "v4l2loopback" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
+  ];
 
   boot.initrd.postResumeCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
@@ -38,7 +47,7 @@
     fi
 
     delete_subvolume_recursively() {
-      IFS=$'\n'
+.      IFS=$'\n'
       for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
         delete_subvolume_recursively "/btrfs_tmp/$i"
       done
@@ -86,6 +95,7 @@
 
   services.udev.extraRules = ''
     SUBSYSTEM=="tty", ATTRS{idVendor}=="346e", ATTRS{idProduct}=="0004", MODE="0666"
+    SUBSYSTEM=="usb", MODE="0666"
   '';
 
   services.greetd = {
@@ -109,9 +119,6 @@
   services.xserver.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
 
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport32Bit = true;
-
   hardware.nvidia = {
     modesetting.enable = true;
     open = true;
@@ -123,6 +130,9 @@
 
   hardware.graphics.enable32Bit = true;
   hardware.graphics.enable = true;
+
+  # nixpkgs.config.cudaSupport = true;
+  # nixpkgs.config.cudaForwardCompat = true;
 
   services.xserver.xkb.layout = "us";
 
@@ -137,6 +147,8 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
   # virtualisation.docker.enable = true;
+
+  hardware.opentabletdriver.enable = true;
 
   environment.variables =
     let
@@ -170,9 +182,14 @@
       "corefonts"
     ];
 
+  nixpkgs.config.allowUnfree = true;
+
+  services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.package = pkgs.mullvad-vpn;
+
   users.users.vaporii = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "input" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "libvirtd" "input" "adbusers" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
       hyfetch
@@ -182,22 +199,28 @@
       equibop
       prismlauncher
       audacity
-      lmms
+      # lmms
       yabridge
       yabridgectl
-      freecad
+      # freecad
       yabridge
       yabridgectl
-      boxflat
+      # boxflat
       kicad
-      jetbrains.idea-community
-      openjdk24
+      jetbrains.idea-oss
       gradle
       arduino-ide
-      cudatoolkit
+      # cudatoolkit
+      openjdk21
+      olympus
+      vesktop
+      freecad
+      alvr
     ];
     hashedPassword = "$y$j9T$h14SkfRLxr/uUwoJbEb35.$l9k5T4/xHp4h1V95l/OdaYjC8Sb4AFXpvkPaqYJKE97";
   };
+
+  services.hardware.openrgb.enable = true;
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
@@ -224,6 +247,7 @@
     ags
     grim
     egl-wayland
+    android-tools
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];

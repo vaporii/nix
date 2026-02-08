@@ -10,8 +10,10 @@
   config = lib.mkIf config.git.enable {
     programs.git = {
       enable = true;
-      userEmail = "phi548182@gmail.com";
-      userName = "vaporii";
+      settings = {
+        user.name = "vaporii";
+        user.email = "phi548182@gmail.com";
+      };
     };
   };
 }

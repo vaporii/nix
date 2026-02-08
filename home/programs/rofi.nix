@@ -10,7 +10,7 @@
   config = lib.mkIf config.rofi.enable {
     programs.rofi = {
       enable = true;
-      package = pkgs.rofi-wayland-unwrapped;
+      package = pkgs.rofi-unwrapped;
       theme = ./rofi/theme.rasi;
     };
   };

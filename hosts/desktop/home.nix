@@ -3,7 +3,7 @@
 {
   imports = [
     inputs.v8p.homeManagerModules.v8p
-    inputs.impermanence.nixosModules.home-manager.impermanence
+    # inputs.impermanence.nixosModules.home-manager.impermanence
     ../../home
   ];
 
@@ -16,9 +16,11 @@
       ".rusherhack"
       {
         directory = ".local/share/Steam";
-        method = "symlink";
+        # method = "symlink";
       }
       ".config/equibop"
+      ".config/vesktop"
+      ".local/share/direnv"
     ];
     files = [
       ".bash_history"
@@ -26,7 +28,7 @@
       ".cache/rofi-entry-history.txt"
       ".cache/rofi3.druncache"
     ];
-    allowOther = true;
+    # allowOther = true;
   };
 
   programs.v8p.enable = true;
@@ -86,7 +88,7 @@
       "DP-1,2560x1440@180,1920x-360,1,bitdepth,8,cm,auto"
     ];
   };
-  rsync.enable = true;
+  rsync.enable = false;
 
   home.stateVersion = "24.11";
 }
